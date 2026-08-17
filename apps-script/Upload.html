@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <base target="_top">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    :root{--green:#00853e;--dark:#005c2b;--ink:#111611;--paper:#f6f3e9;--muted:#626b63;--line:#d9ded8}
+    *{box-sizing:border-box}body{margin:0;padding:22px;font-family:Arial,Helvetica,sans-serif;background:var(--paper);color:var(--ink)}
+    .eyebrow{text-transform:uppercase;letter-spacing:.15em;color:var(--green);font-size:11px;font-weight:900}h1{font-size:32px;letter-spacing:-.04em;margin:7px 0 8px}.lede{color:var(--muted);line-height:1.5;margin:0 0 20px}
+    form{background:#fff;border:1px solid var(--line);padding:20px;box-shadow:5px 5px 0 #d9dfd9}.field{display:flex;flex-direction:column;gap:6px;margin-bottom:14px}label{font-size:12px;font-weight:900;text-transform:uppercase;letter-spacing:.05em}input,select,textarea{padding:12px;border:1px solid #b9c1ba;background:white;font:inherit}textarea{min-height:75px;resize:vertical}.files{display:grid;grid-template-columns:1fr 1fr;gap:10px}.file{border:1px dashed #aab9ad;padding:10px;background:#f8fbf9}.file label{display:block;margin-bottom:6px}.file input{max-width:100%;padding:5px;border:0}.btn{border:2px solid var(--green);padding:12px 17px;font-weight:900;background:var(--green);color:#fff;cursor:pointer;font-size:15px}.btn:disabled{opacity:.55;cursor:wait}.status{display:none;margin-top:16px;padding:13px;background:#edf7f1;border:1px solid #b7dac5;line-height:1.45}.status.error{background:#fff0ee;border-color:#e7b6af}.fine{font-size:11px;color:var(--muted);line-height:1.45;margin:13px 0}.success{font-size:22px;font-weight:900;color:var(--dark)}
+    @media(max-width:600px){body{padding:14px}.files{grid-template-columns:1fr}h1{font-size:28px}}
+  </style>
+</head>
+<body>
+  <div class="eyebrow">Contribute to the archive</div>
+  <h1>Upload your photos.</h1>
+  <p class="lede">Reunion weekend, high school, graduation, old Fallon memories. Send up to eight at a time. They go into a private review folder first.</p>
+  <form id="uploadForm" onsubmit="submitPhotos(this); return false;">
+    <div class="field"><label for="submitter">Your name</label><input id="submitter" name="submitter" required placeholder="First + last name"></div>
+    <div class="field"><label for="email">Email (optional)</label><input id="email" name="email" type="email" placeholder="Only visible to reunion admins"></div>
+    <div class="field"><label for="category">What are these?</label><select id="category" name="category"><option>2026 Reunion Weekend</option><option>High School 1992-1996</option><option>Senior Year / Graduation</option><option>Sports / Activities</option><option>Then + Now</option><option>Fallon Memories</option><option>Other</option></select></div>
+    <div class="field"><label for="note">Caption / story (optional)</label><textarea id="note" name="note" placeholder="Who is in them? Where was this? What do we need to remember?"></textarea></div>
+    <div class="files">
+      <div class="file"><label>Photo 1</label><input name="photo1" type="file" accept="image/*" required></div>
+      <div class="file"><label>Photo 2</label><input name="photo2" type="file" accept="image/*"></div>
+      <div class="file"><label>Photo 3</label><input name="photo3" type="file" accept="image/*"></div>
+      <div class="file"><label>Photo 4</label><input name="photo4" type="file" accept="image/*"></div>
+      <div class="file"><label>Photo 5</label><input name="photo5" type="file" accept="image/*"></div>
+      <div class="file"><label>Photo 6</label><input name="photo6" type="file" accept="image/*"></div>
+      <div class="file"><label>Photo 7</label><input name="photo7" type="file" accept="image/*"></div>
+      <div class="file"><label>Photo 8</label><input name="photo8" type="file" accept="image/*"></div>
+    </div>
+    <p class="fine">Images are reviewed before appearing publicly. Please upload photos you have permission to share. Maximum 20 MB per photo.</p>
+    <button class="btn" id="submitBtn" type="submit">Upload Photos</button>
+    <div class="status" id="status"></div>
+  </form>
+<script>
+function submitPhotos(form){
+  const btn=document.getElementById('submitBtn');
+  const status=document.getElementById('status');
+  btn.disabled=true;btn.textContent='Uploading…';
+  status.style.display='block';status.className='status';status.textContent='Uploading to the Class of ’96 archive. Hang tight…';
+  google.script.run
+    .withSuccessHandler(result=>{
+      status.className='status';
+      status.innerHTML=`<div class="success">Got ’em. ✓</div>${result.count} photo${result.count===1?'':'s'} uploaded for review. Thanks for helping build the archive.`;
+      form.reset();btn.disabled=false;btn.textContent='Upload More Photos';
+    })
+    .withFailureHandler(error=>{
+      status.className='status error';status.textContent='Upload failed: '+error.message;
+      btn.disabled=false;btn.textContent='Try Again';
+    })
+    .savePhotoSubmission(form);
+}
+</script>
+</body>
+</html>

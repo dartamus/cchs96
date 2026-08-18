@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<meta name="theme-color" content="#06452b" />
+<meta name="theme-color" content="#004b2b" />
 
 <title>CCHS Class of 1996 | Fallon, Nevada</title>
 
@@ -12,23 +12,24 @@
   content="The online home of the Churchill County High School Class of 1996 in Fallon, Nevada."
 />
 
-<link rel="icon" type="image/png" href="greenwave-logo.png?v=4" />
+<link rel="icon" type="image/png" href="greenwave-logo.png?v=5" />
 
 <style>
 :root{
-  --green:#0b7a44;
-  --green-dark:#06452b;
-  --green-deep:#032719;
-  --green-soft:#e7f0e9;
-  --cream:#f3efe5;
+  --green:#0b6b3a;
+  --green-dark:#063f26;
+  --green-deep:#032a1a;
+  --green-pale:#e7f0e9;
+  --cream:#f5f1e8;
   --paper:#fbfaf7;
-  --ink:#121713;
+  --ink:#111712;
   --muted:#687169;
-  --line:#d7ddd8;
+  --line:#d8ddd8;
   --white:#fff;
 }
 
 *{box-sizing:border-box}
+
 html{scroll-behavior:smooth}
 
 body{
@@ -48,368 +49,262 @@ img{max-width:100%}
   margin:0 auto;
 }
 
-/* HEADER */
+/* NAV */
 
 nav{
   position:sticky;
   top:0;
   z-index:50;
-  background:rgba(251,250,247,.97);
+  background:rgba(251,250,247,.93);
   backdrop-filter:blur(14px);
   border-bottom:1px solid rgba(10,35,22,.08);
 }
 
 .navin{
-  min-height:86px;
+  height:78px;
   display:flex;
   align-items:center;
   justify-content:space-between;
-  gap:26px;
+  gap:24px;
 }
 
 .brand{
-  text-decoration:none;
   display:flex;
-  flex-direction:column;
-  line-height:.92;
+  align-items:center;
+  gap:12px;
+  text-decoration:none;
 }
 
-.brand .cchs{
-  font-size:34px;
-  font-weight:950;
-  letter-spacing:.015em;
-  color:var(--green-dark);
+.logo-circle{
+  display:block;
+  overflow:hidden;
+  border-radius:50%;
+  background:#fff;
 }
 
-.brand .class{
-  margin-top:7px;
-  font-size:12px;
+.brand .logo-circle{
+  width:46px;
+  height:46px;
+  flex:0 0 46px;
+}
+
+.logo-circle img{
+  width:100%;
+  height:100%;
+  object-fit:contain;
+  display:block;
+}
+
+.brand-copy{line-height:1.05}
+
+.brand-copy small{
+  display:block;
   text-transform:uppercase;
-  letter-spacing:.24em;
-  font-weight:900;
-  color:#345542;
+  letter-spacing:.14em;
+  font-size:9px;
+  color:var(--muted);
+  font-weight:800;
+  margin-bottom:4px;
+}
+
+.brand-copy strong{
+  font-size:17px;
+  letter-spacing:-.02em;
 }
 
 .navlinks{
   display:flex;
+  gap:26px;
   align-items:center;
-  gap:34px;
-  font-size:12px;
-  font-weight:900;
-  text-transform:uppercase;
-  letter-spacing:.1em;
+  font-size:14px;
+  font-weight:750;
 }
 
 .navlinks a{
   text-decoration:none;
-  position:relative;
 }
 
-.navlinks a:not(.nav-upload)::after{
-  content:"";
-  position:absolute;
-  height:3px;
-  left:0;
-  right:100%;
-  bottom:-10px;
-  background:var(--green);
-  border-radius:999px;
-  transition:right .2s ease;
-}
-
-.navlinks a:not(.nav-upload):hover::after{
-  right:0;
+.navlinks a:hover{
+  color:var(--green);
 }
 
 .nav-upload{
-  padding:13px 20px;
-  border-radius:999px;
-  background:var(--green);
-  color:#fff;
   border:1px solid var(--green);
-}
-
-.nav-upload:hover{
-  background:var(--green-dark);
+  padding:10px 14px;
+  border-radius:999px;
+  color:var(--green);
 }
 
 /* HERO */
 
 .hero{
-  position:relative;
-  min-height:650px;
+  min-height:calc(100vh - 78px);
   display:flex;
   align-items:center;
+  position:relative;
   overflow:hidden;
+  background:
+    radial-gradient(circle at 80% 20%,rgba(255,255,255,.12),transparent 25%),
+    linear-gradient(135deg,var(--green-deep),var(--green-dark) 55%,#0c7140);
   color:#fff;
-  background-image:
-    linear-gradient(90deg,rgba(3,42,27,.84) 0%,rgba(3,49,30,.75) 48%,rgba(3,44,28,.62) 100%),
-    url("cchs-campus-hero.jpeg");
-  background-size:cover;
-  background-position:center 54%;
 }
 
-.hero::after{
-  content:"";
+.hero:after{
+  content:"96";
   position:absolute;
-  inset:0;
-  background:
-    linear-gradient(180deg,rgba(0,0,0,.05),rgba(0,0,0,.19)),
-    radial-gradient(circle at 77% 20%,rgba(255,255,255,.12),transparent 26%);
+  right:-35px;
+  bottom:-100px;
+  font-size:clamp(260px,35vw,560px);
+  font-weight:950;
+  letter-spacing:-.1em;
+  line-height:.75;
+  color:rgba(255,255,255,.055);
   pointer-events:none;
 }
 
 .hero-grid{
   display:grid;
-  grid-template-columns:minmax(340px,.95fr) minmax(0,1.1fr);
-  gap:44px;
+  grid-template-columns:minmax(0,1fr) 360px;
+  gap:60px;
   align-items:center;
   position:relative;
   z-index:2;
-  padding:54px 0 58px;
+  padding:70px 0;
 }
 
-.hero-mascot{
-  display:flex;
-  align-items:center;
-  justify-content:center;
+.hero-mark{
+  width:210px;
+  aspect-ratio:1;
+  border-radius:50%;
+  overflow:hidden;
+  background:#fff;
+  display:grid;
+  place-items:center;
+  margin:auto;
+  box-shadow:0 28px 70px rgba(0,0,0,.22);
 }
 
-.hero-mascot img{
-  width:min(520px,100%);
-  max-height:470px;
+.hero-mark img{
+  width:100%;
+  height:100%;
   object-fit:contain;
-  filter:drop-shadow(0 24px 32px rgba(0,0,0,.26));
+  display:block;
 }
 
-.hero-copy{
-  text-align:center;
-  display:flex;
-  flex-direction:column;
-  align-items:center;
+.hero-kicker{
+  text-transform:uppercase;
+  letter-spacing:.22em;
+  font-size:12px;
+  font-weight:800;
+  color:#b9ddc8;
+  margin-bottom:18px;
 }
 
-.hero-script{
+.hero h1{
+  font-size:clamp(58px,8vw,112px);
+  line-height:.85;
+  letter-spacing:-.065em;
   margin:0;
-  font-family:"Brush Script MT","Segoe Script",cursive;
-  font-weight:500;
-  font-size:clamp(82px,9vw,148px);
-  line-height:.78;
+  max-width:850px;
+}
+
+.hero h1 span{
+  display:block;
+  font-size:.42em;
   letter-spacing:-.035em;
-  color:#fff;
-  text-shadow:0 6px 20px rgba(0,0,0,.18);
+  margin-top:20px;
+  color:#d7eadf;
 }
 
-.hero-swish{
-  width:min(600px,90%);
-  height:12px;
-  margin:6px 0 19px;
-  background:var(--green);
-  border-radius:60% 20% 60% 20%;
-  transform:rotate(-2deg);
+.hero p{
+  max-width:700px;
+  font-size:20px;
+  line-height:1.6;
+  color:#e6efe9;
+  margin:30px 0 34px;
 }
 
-.hero-overline{
-  font-size:clamp(20px,2.2vw,34px);
-  font-weight:950;
-  letter-spacing:.2em;
-  text-transform:uppercase;
-}
-
-.hero-year{
-  margin:8px 0 18px;
-  font-family:Impact,Haettenschweiler,"Arial Narrow Bold",sans-serif;
-  font-size:clamp(116px,15vw,230px);
-  line-height:.76;
-  color:var(--green);
-  -webkit-text-stroke:4px #fff;
-  text-shadow:0 12px 30px rgba(0,0,0,.28);
-}
-
-.hero-tagline{
-  margin-bottom:28px;
-  text-transform:uppercase;
-  letter-spacing:.34em;
-  font-size:clamp(15px,1.6vw,23px);
-  font-weight:950;
-}
-
-.hero-actions{
+.actions{
   display:flex;
   flex-wrap:wrap;
-  justify-content:center;
   gap:12px;
 }
 
-.hero-btn{
-  min-width:180px;
+.btn{
   display:inline-flex;
   align-items:center;
   justify-content:center;
-  padding:13px 20px;
+  border:0;
   border-radius:999px;
+  padding:14px 19px;
+  font-weight:850;
   text-decoration:none;
-  text-transform:uppercase;
-  letter-spacing:.075em;
-  font-size:12px;
-  font-weight:950;
-  border:2px solid rgba(255,255,255,.9);
-  color:#fff;
-  background:rgba(4,42,27,.48);
-  backdrop-filter:blur(5px);
-}
-
-.hero-btn.primary{
+  cursor:pointer;
   background:var(--green);
-  border-color:var(--green);
+  color:#fff;
 }
 
-.hero-btn.light{
-  color:var(--green-deep);
+.hero .btn{
   background:#fff;
-  border-color:#fff;
+  color:var(--green-dark);
 }
 
-.hero-btn:hover{
+.btn.alt{
+  background:transparent;
+  color:inherit;
+  border:1px solid currentColor;
+}
+
+.hero .btn.alt{
+  color:#fff;
+  border-color:rgba(255,255,255,.55);
+}
+
+.btn:hover{
   transform:translateY(-1px);
 }
 
-/* WELCOME */
+/* QUICK LINKS */
 
-.welcome{
+.intro-strip{
   background:#fff;
   border-bottom:1px solid var(--line);
 }
 
-.welcome-grid{
-  display:grid;
-  grid-template-columns:.8fr 1.25fr;
-  gap:64px;
-  align-items:center;
-  min-height:215px;
-  padding:36px 0;
-}
-
-.welcome-mark small{
-  display:block;
-  margin-bottom:6px;
-  color:var(--green);
-  font-size:11px;
-  text-transform:uppercase;
-  letter-spacing:.24em;
-  font-weight:950;
-}
-
-.welcome-mark strong{
-  display:block;
-  color:var(--green-dark);
-  font-family:"Brush Script MT","Segoe Script",cursive;
-  font-weight:500;
-  font-size:clamp(56px,6vw,90px);
-  line-height:.82;
-}
-
-.welcome-copy{
-  max-width:720px;
-  color:#536159;
-  font-size:18px;
-  line-height:1.8;
-}
-
-/* GREENWAVE FOREVER BAR */
-
-.forever{
-  background:linear-gradient(90deg,#075034,#0c6f43,#075034);
-  color:#fff;
-  padding:21px 0;
-}
-
-.forever-inner{
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  gap:24px;
-  text-transform:uppercase;
-  letter-spacing:.28em;
-  font-size:11px;
-  font-weight:950;
-}
-
-.forever-inner::before,
-.forever-inner::after{
-  content:"";
-  width:140px;
-  max-width:22vw;
-  height:1px;
-  background:rgba(255,255,255,.46);
-}
-
-/* QUICK CARDS */
-
-.quick{
-  background:var(--cream);
-  padding:34px 0 56px;
-}
-
-.quick-grid{
+.intro-grid{
   display:grid;
   grid-template-columns:repeat(3,1fr);
-  gap:16px;
 }
 
-.quick-card{
-  min-height:120px;
-  padding:24px;
-  border-radius:18px;
-  background:#fff;
-  border:1px solid var(--line);
+.intro-grid a{
+  padding:22px 24px;
   text-decoration:none;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:18px;
-  box-shadow:0 8px 22px rgba(26,42,32,.04);
+  border-right:1px solid var(--line);
+  font-weight:800;
 }
 
-.quick-card:hover{
-  transform:translateY(-2px);
-  box-shadow:0 12px 30px rgba(26,42,32,.08);
+.intro-grid a:last-child{
+  border-right:0;
 }
 
-.quick-icon{
-  flex:0 0 58px;
-  width:58px;
-  height:58px;
-  display:grid;
-  place-items:center;
-  border-radius:50%;
-  background:var(--green);
-  color:#fff;
-  font-weight:950;
-  font-size:20px;
-}
-
-.quick-card h3{
-  margin:0 0 4px;
-  font-size:19px;
-  letter-spacing:-.025em;
-}
-
-.quick-card p{
-  margin:0;
+.intro-grid small{
+  display:block;
+  text-transform:uppercase;
+  letter-spacing:.13em;
   color:var(--muted);
-  font-size:13px;
-  line-height:1.5;
+  font-size:9px;
+  margin-bottom:4px;
 }
 
-.quick-arrow{
-  font-size:26px;
-  color:var(--green-dark);
+.intro-grid a:hover{
+  background:var(--green-pale);
 }
 
 /* GENERAL */
 
-section{padding:86px 0}
+section{
+  padding:88px 0;
+}
 
 .sectionhead{
   display:grid;
@@ -420,58 +315,112 @@ section{padding:86px 0}
 }
 
 .eyebrow{
-  margin-bottom:8px;
-  color:var(--green);
-  font-size:11px;
   text-transform:uppercase;
   letter-spacing:.18em;
-  font-weight:950;
+  color:var(--green);
+  font-size:11px;
+  font-weight:900;
+  margin-bottom:8px;
 }
 
 h2{
-  margin:0;
   font-size:clamp(40px,5vw,68px);
   line-height:.95;
   letter-spacing:-.05em;
+  margin:0;
 }
 
 .sectionhead p{
   margin:0;
   color:var(--muted);
   font-size:17px;
-  line-height:1.65;
+  line-height:1.6;
 }
 
-.btn{
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  padding:14px 19px;
-  border:0;
-  border-radius:999px;
-  background:var(--green);
+/* RECAP */
+
+.recap{
+  background:var(--cream);
+}
+
+.recap-grid{
+  display:grid;
+  grid-template-columns:1.15fr .85fr;
+  gap:22px;
+}
+
+.recap-main{
+  background:var(--green-dark);
   color:#fff;
-  text-decoration:none;
-  font-weight:900;
-  cursor:pointer;
-}
-
-.btn:hover{
-  transform:translateY(-1px);
-}
-
-/* PHOTO ARCHIVE */
-
-.archive-section{
-  background:#fff;
-}
-
-.archive-shell{
-  min-height:500px;
+  padding:44px;
+  border-radius:24px;
+  min-height:390px;
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+  position:relative;
   overflow:hidden;
+}
+
+.recap-main:after{
+  content:"30";
+  position:absolute;
+  right:-10px;
+  bottom:-45px;
+  font-size:190px;
+  line-height:1;
+  font-weight:950;
+  color:rgba(255,255,255,.06);
+}
+
+.recap-main .bigline{
+  font-size:clamp(42px,6vw,76px);
+  line-height:.96;
+  letter-spacing:-.05em;
+  font-weight:900;
+  max-width:650px;
+  position:relative;
+  z-index:1;
+}
+
+.recap-main p{
+  max-width:590px;
+  color:#dcebe2;
+  font-size:17px;
+  position:relative;
+  z-index:1;
+}
+
+.recap-side{
   background:#fff;
   border:1px solid var(--line);
   border-radius:24px;
+  padding:32px;
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+}
+
+.recap-side h3{
+  font-size:28px;
+  margin:0 0 12px;
+  letter-spacing:-.03em;
+}
+
+.recap-side p{
+  color:var(--muted);
+  font-size:16px;
+  line-height:1.7;
+}
+
+/* ARCHIVE */
+
+.archive-shell{
+  background:#fff;
+  border:1px solid var(--line);
+  border-radius:24px;
+  min-height:500px;
+  overflow:hidden;
 }
 
 .gallery-frame{
@@ -488,38 +437,39 @@ h2{
   place-items:center;
   text-align:center;
   padding:42px;
-  background:linear-gradient(135deg,rgba(11,107,58,.08),rgba(11,107,58,.02));
+  background:
+    linear-gradient(135deg,rgba(11,107,58,.08),rgba(11,107,58,.02));
 }
 
 .archive-placeholder .num{
   font-size:120px;
-  line-height:.8;
-  color:rgba(11,107,58,.13);
   font-weight:950;
   letter-spacing:-.09em;
+  color:rgba(11,107,58,.13);
+  line-height:.8;
 }
 
 .archive-placeholder h3{
-  margin:12px 0 8px;
   font-size:30px;
+  margin:12px 0 8px;
   letter-spacing:-.03em;
 }
 
 .archive-placeholder p{
   max-width:600px;
-  margin:0 auto 20px;
   color:var(--muted);
+  margin:0 auto 20px;
 }
 
 .upload-callout{
   margin-top:18px;
+  background:var(--green-pale);
+  border-radius:20px;
   padding:24px;
   display:flex;
-  justify-content:space-between;
   align-items:center;
+  justify-content:space-between;
   gap:24px;
-  border-radius:20px;
-  background:var(--green-soft);
 }
 
 .upload-callout strong{
@@ -531,26 +481,88 @@ h2{
   color:var(--muted);
 }
 
-/* CLASSMATES */
+/* EXPLORE */
 
-.classmates-section{
+.explore{
   background:#0b1510;
   color:#fff;
 }
 
-.classmates-section .eyebrow{
-  color:#8fc7a5;
+.explore .eyebrow{
+  color:#88caa5;
 }
 
-.classmates-section .sectionhead p{
+.explore .sectionhead p{
+  color:#adb9b0;
+}
+
+.tile-grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:16px;
+}
+
+.tile{
+  min-height:260px;
+  padding:30px;
+  border-radius:24px;
+  text-decoration:none;
+  position:relative;
+  overflow:hidden;
+  display:flex;
+  flex-direction:column;
+  justify-content:flex-end;
+  background:#14251a;
+  border:1px solid rgba(255,255,255,.08);
+}
+
+.tile:before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(135deg,transparent,rgba(255,255,255,.025));
+}
+
+.tile:hover{
+  background:#183020;
+}
+
+.tile small{
+  position:relative;
+  text-transform:uppercase;
+  letter-spacing:.14em;
+  color:#8fc7a5;
+  font-size:10px;
+  font-weight:900;
+}
+
+.tile h3{
+  position:relative;
+  font-size:36px;
+  line-height:1;
+  margin:8px 0 0;
+  letter-spacing:-.04em;
+}
+
+.tile p{
+  position:relative;
+  max-width:480px;
   color:#aeb9b0;
+  margin:12px 0 0;
+}
+
+/* CLASSMATE FORM */
+
+.form-section{
+  background:#fff;
+  padding:58px 0 72px;
 }
 
 .classmate-shell{
+  border:1px solid var(--line);
+  border-radius:24px;
   overflow:hidden;
   background:var(--paper);
-  border:1px solid rgba(255,255,255,.12);
-  border-radius:24px;
 }
 
 .classmate-frame{
@@ -562,103 +574,43 @@ h2{
 }
 
 .classmate-placeholder{
-  min-height:390px;
+  min-height:400px;
   display:grid;
   place-items:center;
-  padding:42px;
   text-align:center;
-  color:var(--ink);
+  padding:42px;
 }
 
-/* REUNION CONTENT */
-
-.recap{
-  background:var(--cream);
-}
-
-.recap-grid{
-  display:grid;
-  grid-template-columns:1.15fr .85fr;
-  gap:22px;
-}
-
-.recap-main{
-  position:relative;
-  overflow:hidden;
-  min-height:390px;
-  padding:44px;
-  display:flex;
-  flex-direction:column;
-  justify-content:space-between;
-  border-radius:24px;
-  background:var(--green-dark);
-  color:#fff;
-}
-
-.recap-main::after{
-  content:"30";
-  position:absolute;
-  right:-10px;
-  bottom:-45px;
-  font-size:190px;
-  line-height:1;
-  font-weight:950;
-  color:rgba(255,255,255,.06);
-}
-
-.recap-main .bigline{
-  position:relative;
-  z-index:1;
-  max-width:650px;
-  font-size:clamp(42px,6vw,76px);
-  line-height:.96;
-  letter-spacing:-.05em;
-  font-weight:950;
-}
-
-.recap-main p{
-  position:relative;
-  z-index:1;
-  max-width:590px;
-  color:#dcebe2;
-  font-size:17px;
-}
-
-.recap-side{
-  padding:32px;
-  display:flex;
-  flex-direction:column;
-  justify-content:space-between;
-  border:1px solid var(--line);
-  border-radius:24px;
-  background:#fff;
-}
-
-.recap-side h3{
-  margin:0 0 12px;
-  font-size:28px;
-  letter-spacing:-.03em;
-}
-
-.recap-side p{
+.classmate-placeholder p{
+  max-width:560px;
   color:var(--muted);
-  font-size:16px;
-  line-height:1.7;
 }
 
 /* FOOTER */
 
 footer{
-  padding:50px 0 24px;
   background:#07100b;
   color:#fff;
+  padding:52px 0 24px;
 }
 
 .footer-top{
   display:flex;
   justify-content:space-between;
-  align-items:center;
   gap:30px;
+  align-items:center;
+}
+
+.footer-brand{
+  display:flex;
+  align-items:center;
+  gap:14px;
+}
+
+.footer-brand .logo-circle{
+  width:58px;
+  height:58px;
+  flex:0 0 58px;
 }
 
 .footer-brand strong{
@@ -668,9 +620,9 @@ footer{
 
 .footer-brand span{
   display:block;
-  margin-top:3px;
   color:#8f9c92;
   font-size:13px;
+  margin-top:3px;
 }
 
 .footer-right{
@@ -680,13 +632,13 @@ footer{
 }
 
 .fem{
-  margin-top:34px;
+  margin-top:36px;
   padding-top:18px;
   border-top:1px solid rgba(255,255,255,.07);
-  color:#59645c;
-  text-align:right;
   font-size:8px;
   letter-spacing:.3em;
+  color:#59645c;
+  text-align:right;
 }
 
 /* MODAL */
@@ -695,11 +647,11 @@ footer{
   display:none;
   position:fixed;
   inset:0;
+  background:rgba(0,0,0,.72);
   z-index:100;
   align-items:center;
   justify-content:center;
   padding:20px;
-  background:rgba(0,0,0,.72);
 }
 
 .modal.on{
@@ -707,12 +659,12 @@ footer{
 }
 
 .modalbox{
+  background:var(--paper);
   width:min(900px,100%);
   max-height:92vh;
   overflow:auto;
-  padding:22px;
   border-radius:22px;
-  background:var(--paper);
+  padding:22px;
 }
 
 .close{
@@ -732,34 +684,37 @@ footer{
 
 /* RESPONSIVE */
 
-@media(max-width:980px){
-  .navlinks{display:none}
+@media(max-width:900px){
+  .navlinks{
+    display:none;
+  }
 
   .hero{
     min-height:auto;
-    background-position:center;
   }
 
   .hero-grid{
     grid-template-columns:1fr;
-    padding:44px 0 56px;
+    padding:56px 0 70px;
   }
 
-  .hero-mascot img{
-    width:min(360px,80vw);
+  .hero-mark{
+    width:150px;
+    margin:0;
+    order:-1;
   }
 
-  .hero-copy{
-    margin-top:-10px;
-  }
-
-  .welcome-grid{
+  .intro-grid{
     grid-template-columns:1fr;
-    gap:22px;
   }
 
-  .quick-grid{
-    grid-template-columns:1fr;
+  .intro-grid a{
+    border-right:0;
+    border-bottom:1px solid var(--line);
+  }
+
+  .intro-grid a:last-child{
+    border-bottom:0;
   }
 
   .sectionhead,
@@ -767,10 +722,14 @@ footer{
     grid-template-columns:1fr;
   }
 
+  .tile-grid{
+    grid-template-columns:1fr;
+  }
+
   .upload-callout,
   .footer-top{
-    flex-direction:column;
     align-items:flex-start;
+    flex-direction:column;
   }
 
   .footer-right{
@@ -785,40 +744,6 @@ footer{
 @media(max-width:600px){
   .wrap{
     width:min(100% - 24px,1180px);
-  }
-
-  .navin{
-    min-height:74px;
-  }
-
-  .brand .cchs{
-    font-size:27px;
-  }
-
-  .hero{
-    background-position:58% center;
-  }
-
-  .hero-mascot img{
-    width:min(300px,85vw);
-  }
-
-  .hero-script{
-    font-size:72px;
-  }
-
-  .hero-year{
-    font-size:116px;
-    -webkit-text-stroke:3px #fff;
-  }
-
-  .hero-actions{
-    width:100%;
-    flex-direction:column;
-  }
-
-  .hero-btn{
-    width:100%;
   }
 
   .gallery-frame{
@@ -838,8 +763,19 @@ footer{
   <div class="wrap navin">
 
     <a class="brand" href="#top">
-      <span class="cchs">CCHS</span>
-      <span class="class">Class of 1996</span>
+
+      <span class="logo-circle">
+        <img
+          src="greenwave-logo.png?v=5"
+          alt="Churchill County Greenwave logo"
+        >
+      </span>
+
+      <div class="brand-copy">
+        <small>Churchill County High School</small>
+        <strong>Class of 1996</strong>
+      </div>
+
     </a>
 
     <div class="navlinks">
@@ -861,140 +797,146 @@ footer{
 <header class="hero" id="top">
   <div class="wrap hero-grid">
 
-    <div class="hero-mascot">
-      <img
-        src="greenwave-logo.png?v=4"
-        alt="Churchill County Greenwave mascot"
-      >
-    </div>
+    <div>
 
-    <div class="hero-copy">
+      <div class="hero-kicker">
+        Fallon, Nevada
+      </div>
 
-      <h1 class="hero-script">
-        Greenwave
+      <h1>
+        Class of 1996
+        <span>Churchill County High School</span>
       </h1>
 
-      <div class="hero-swish"></div>
+      <p>
+        Thirty years went fast. This is our place to keep the photos,
+        find each other again, remember the people we lost, and hang
+        onto some of the stories before we all start telling them differently.
+      </p>
 
-      <div class="hero-overline">
-        CCHS Class of
-      </div>
-
-      <div class="hero-year">
-        1996
-      </div>
-
-      <div class="hero-tagline">
-        Still Making Waves
-      </div>
-
-      <div class="hero-actions">
+      <div class="actions">
 
         <a
-          class="hero-btn primary"
+          class="btn"
           href="#photos">
-          Photo Archive
-        </a>
-
-        <a
-          class="hero-btn light"
-          href="#classmates">
-          Classmates
+          Explore the Archive
         </a>
 
         <button
-          class="hero-btn"
+          class="btn alt"
           type="button"
           onclick="openUpload()">
-          Share Photos
+          Upload Photos
         </button>
 
       </div>
 
     </div>
 
+    <div class="hero-mark">
+      <img
+        src="greenwave-logo.png?v=5"
+        alt="Greenwave logo"
+      >
+    </div>
+
   </div>
 </header>
 
-<section class="welcome">
+<div class="intro-strip">
+  <div class="wrap intro-grid">
 
-  <div class="wrap welcome-grid">
+    <a href="#photos">
+      <small>Then + Now</small>
+      Photo Archive
+    </a>
 
-    <div class="welcome-mark">
-      <small>Welcome back,</small>
-      <strong>Class of ’96.</strong>
-    </div>
+    <a href="#classmates">
+      <small>Where'd everybody go?</small>
+      Classmates
+    </a>
 
-    <div class="welcome-copy">
-      Different paths. Same roots. This is our place to reconnect,
-      relive the good times, share some photos, remember the people
-      we lost, and hang onto the stories that still make us us.
-    </div>
+    <a
+      href="javascript:void(0)"
+      onclick="openUpload()">
+      <small>Your turn</small>
+      Share Photos
+    </a>
 
-  </div>
-
-</section>
-
-<div class="forever">
-  <div class="wrap forever-inner">
-    Greenwave Forever
   </div>
 </div>
 
-<section class="quick">
+<section class="recap" id="reunion">
+  <div class="wrap">
 
-  <div class="wrap quick-grid">
+    <div class="sectionhead">
 
-    <a class="quick-card" href="#photos">
+      <div>
+        <div class="eyebrow">
+          Reunion Weekend
+        </div>
 
-      <div class="quick-icon">
-        📷
+        <h2>
+          We came home.
+        </h2>
       </div>
 
-      <div style="flex:1">
-        <h3>Photo Archive</h3>
-        <p>Reunion, high school, and everything in between.</p>
+      <p>
+        Thirty years later, a bunch of us ended up back in Fallon for the weekend.
+        The full recap is coming. For now, we're collecting the pictures and trying
+        not to lose any of them in a group text.
+      </p>
+
+    </div>
+
+    <div class="recap-grid">
+
+      <div class="recap-main">
+
+        <div class="bigline">
+          Same people.<br>
+          More stories.
+        </div>
+
+        <p>
+          Reunion photos, old high school pictures, whatever somebody found
+          in a box at their parents' house. If it belongs to this class,
+          it belongs here.
+        </p>
+
       </div>
 
-      <div class="quick-arrow">›</div>
+      <div class="recap-side">
 
-    </a>
+        <div>
 
-    <a class="quick-card" href="#classmates">
+          <h3>
+            The weekend, eventually.
+          </h3>
 
-      <div class="quick-icon">
-        👥
+          <p>
+            I'll add the real recap once I've got the words for it.
+            Until then, consider this the holding spot for the photos,
+            dumb stories, surprisingly good hugs, and everything else
+            that made the weekend what it was.
+          </p>
+
+        </div>
+
+        <a
+          class="btn"
+          href="#photos">
+          See the Photos
+        </a>
+
       </div>
 
-      <div style="flex:1">
-        <h3>Classmates</h3>
-        <p>Tell us where you landed. Find old friends.</p>
-      </div>
-
-      <div class="quick-arrow">›</div>
-
-    </a>
-
-    <a class="quick-card" href="#reunion">
-
-      <div class="quick-icon">
-        30
-      </div>
-
-      <div style="flex:1">
-        <h3>Reunion Weekend</h3>
-        <p>Photos, recap, and whatever we can remember.</p>
-      </div>
-
-      <div class="quick-arrow">›</div>
-
-    </a>
+    </div>
 
   </div>
-
 </section>
 
-<section class="archive-section" id="photos">
+<section id="photos">
   <div class="wrap">
 
     <div class="sectionhead">
@@ -1024,7 +966,10 @@ footer{
         class="archive-placeholder">
 
         <div>
-          <div class="num">96</div>
+
+          <div class="num">
+            96
+          </div>
 
           <h3>
             The gallery is almost live.
@@ -1041,6 +986,7 @@ footer{
             onclick="openUpload()">
             Upload Photos
           </button>
+
         </div>
 
       </div>
@@ -1057,6 +1003,7 @@ footer{
     <div class="upload-callout">
 
       <div>
+
         <strong>
           Got pictures?
         </strong>
@@ -1065,6 +1012,7 @@ footer{
           Upload them. They go into a private review folder first,
           then the good stuff shows up here.
         </p>
+
       </div>
 
       <button
@@ -1079,27 +1027,110 @@ footer{
   </div>
 </section>
 
-<section class="classmates-section" id="classmates">
+<section class="explore" id="classmates">
   <div class="wrap">
 
     <div class="sectionhead">
 
       <div>
+
         <div class="eyebrow">
-          Classmates
+          More than one weekend
         </div>
 
         <h2>
-          Where'd everybody go?
+          This is ours now.
         </h2>
+
       </div>
 
       <p>
-        Share what you're comfortable sharing. Nothing appears publicly
-        until an admin approves it, and private contact info stays private.
+        The reunion got this started. The idea is to keep it going,
+        without turning it into another social network nobody asked for.
       </p>
 
     </div>
+
+    <div class="tile-grid">
+
+      <a
+        class="tile"
+        href="#update">
+
+        <small>
+          Classmates
+        </small>
+
+        <h3>
+          Where are you now?
+        </h3>
+
+        <p>
+          Share as much or as little as you want. City, work, family,
+          adventures, whatever makes sense thirty years later.
+        </p>
+
+      </a>
+
+      <a
+        class="tile"
+        href="#photos">
+
+        <small>
+          Then + Now
+        </small>
+
+        <h3>
+          Photo Archive
+        </h3>
+
+        <p>
+          The reunion, high school, graduation, and anything else
+          we probably thought we'd remember forever.
+        </p>
+
+      </a>
+
+      <div class="tile">
+
+        <small>
+          Coming Soon
+        </small>
+
+        <h3>
+          Stories
+        </h3>
+
+        <p>
+          The stuff that won't fit in a caption.
+          Teachers, road trips, games, bad decisions, good people.
+        </p>
+
+      </div>
+
+      <div class="tile">
+
+        <small>
+          Coming Soon
+        </small>
+
+        <h3>
+          In Memory
+        </h3>
+
+        <p>
+          A simple place to remember classmates who should still be here with us.
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<section class="form-section" id="update">
+  <div class="wrap">
 
     <div class="classmate-shell">
 
@@ -1108,17 +1139,20 @@ footer{
         class="classmate-placeholder">
 
         <div>
+
           <div class="eyebrow">
             Your turn
           </div>
 
-          <h2 style="font-size:44px">
+          <h2>
             Tell us where you landed.
           </h2>
 
           <p>
             The classmate form is being connected.
+            Check back shortly.
           </p>
+
         </div>
 
       </div>
@@ -1135,87 +1169,30 @@ footer{
   </div>
 </section>
 
-<section class="recap" id="reunion">
-  <div class="wrap">
-
-    <div class="sectionhead">
-
-      <div>
-        <div class="eyebrow">
-          Reunion Weekend
-        </div>
-
-        <h2>
-          We came home.
-        </h2>
-      </div>
-
-      <p>
-        Thirty years later, a bunch of us ended up back in Fallon.
-        The full recap is coming. For now, we're collecting pictures
-        and trying not to lose any of them in a group text.
-      </p>
-
-    </div>
-
-    <div class="recap-grid">
-
-      <div class="recap-main">
-
-        <div class="bigline">
-          Same people.<br>
-          More stories.
-        </div>
-
-        <p>
-          Reunion photos, old high school pictures, whatever somebody found
-          in a box at their parents' house. If it belongs to this class,
-          it belongs here.
-        </p>
-
-      </div>
-
-      <div class="recap-side">
-
-        <div>
-          <h3>
-            The weekend, eventually.
-          </h3>
-
-          <p>
-            I'll add the real recap once I've got the words for it.
-            Until then, consider this the holding spot for the photos,
-            dumb stories, surprisingly good hugs, and everything else
-            that made the weekend what it was.
-          </p>
-        </div>
-
-        <a
-          class="btn"
-          href="#photos">
-          See the Photos
-        </a>
-
-      </div>
-
-    </div>
-
-  </div>
-</section>
-
 <footer>
 
   <div class="wrap footer-top">
 
     <div class="footer-brand">
 
-      <strong>
-        Churchill County High School · Class of 1996
-      </strong>
-
-      <span>
-        Fallon, Nevada
+      <span class="logo-circle">
+        <img
+          src="greenwave-logo.png?v=5"
+          alt="Greenwave logo"
+        >
       </span>
+
+      <div>
+
+        <strong>
+          Churchill County High School · Class of 1996
+        </strong>
+
+        <span>
+          Fallon, Nevada
+        </span>
+
+      </div>
 
     </div>
 
@@ -1302,7 +1279,7 @@ if (photoAppReady) {
     'none';
 }
 
-/* UPLOAD MODAL */
+/* PHOTO UPLOAD */
 
 function openUpload() {
 

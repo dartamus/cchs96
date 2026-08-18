@@ -12,19 +12,19 @@
   content="The online home of the Churchill County High School Class of 1996 in Fallon, Nevada."
 />
 
-<link rel="icon" type="image/png" href="greenwave-logo.png?v=3" />
+<link rel="icon" type="image/png" href="greenwave-logo.png?v=4" />
 
 <style>
 :root{
   --green:#0b7a44;
   --green-dark:#06452b;
   --green-deep:#032719;
-  --green-pale:#e7f0e9;
-  --cream:#f4f0e6;
+  --green-soft:#e7f0e9;
+  --cream:#f3efe5;
   --paper:#fbfaf7;
-  --ink:#111712;
+  --ink:#121713;
   --muted:#687169;
-  --line:#d8ddd8;
+  --line:#d7ddd8;
   --white:#fff;
 }
 
@@ -42,21 +42,25 @@ body{
 a{color:inherit}
 button,input,textarea,select{font:inherit}
 img{max-width:100%}
-.wrap{width:min(1180px,calc(100% - 40px));margin:0 auto}
 
-/* NAV */
+.wrap{
+  width:min(1180px,calc(100% - 40px));
+  margin:0 auto;
+}
+
+/* HEADER */
 
 nav{
   position:sticky;
   top:0;
   z-index:50;
-  background:rgba(251,250,247,.96);
+  background:rgba(251,250,247,.97);
   backdrop-filter:blur(14px);
   border-bottom:1px solid rgba(10,35,22,.08);
 }
 
 .navin{
-  height:82px;
+  min-height:86px;
   display:flex;
   align-items:center;
   justify-content:space-between;
@@ -67,33 +71,33 @@ nav{
   text-decoration:none;
   display:flex;
   flex-direction:column;
-  line-height:.95;
+  line-height:.92;
 }
 
 .brand .cchs{
-  font-size:29px;
+  font-size:34px;
   font-weight:950;
-  letter-spacing:.02em;
+  letter-spacing:.015em;
   color:var(--green-dark);
 }
 
 .brand .class{
-  margin-top:6px;
+  margin-top:7px;
   font-size:12px;
   text-transform:uppercase;
-  letter-spacing:.2em;
-  font-weight:850;
-  color:#385847;
+  letter-spacing:.24em;
+  font-weight:900;
+  color:#345542;
 }
 
 .navlinks{
   display:flex;
-  gap:28px;
   align-items:center;
-  font-size:13px;
-  font-weight:850;
+  gap:34px;
+  font-size:12px;
+  font-weight:900;
   text-transform:uppercase;
-  letter-spacing:.08em;
+  letter-spacing:.1em;
 }
 
 .navlinks a{
@@ -101,27 +105,24 @@ nav{
   position:relative;
 }
 
-.navlinks a:not(.nav-upload):after{
+.navlinks a:not(.nav-upload)::after{
   content:"";
   position:absolute;
+  height:3px;
   left:0;
   right:100%;
-  bottom:-8px;
-  height:3px;
-  border-radius:999px;
+  bottom:-10px;
   background:var(--green);
-  transition:right .18s ease;
+  border-radius:999px;
+  transition:right .2s ease;
 }
 
-.navlinks a:not(.nav-upload):hover:after{
+.navlinks a:not(.nav-upload):hover::after{
   right:0;
 }
 
 .nav-upload{
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  padding:12px 18px;
+  padding:13px 20px;
   border-radius:999px;
   background:var(--green);
   color:#fff;
@@ -135,52 +136,50 @@ nav{
 /* HERO */
 
 .hero{
-  min-height:680px;
   position:relative;
-  overflow:hidden;
-  color:#fff;
+  min-height:650px;
   display:flex;
   align-items:center;
+  overflow:hidden;
+  color:#fff;
   background-image:
-    linear-gradient(90deg,rgba(2,39,25,.88) 0%,rgba(3,52,32,.78) 42%,rgba(3,48,30,.62) 100%),
-    linear-gradient(180deg,rgba(2,29,19,.25),rgba(2,29,19,.25)),
+    linear-gradient(90deg,rgba(3,42,27,.84) 0%,rgba(3,49,30,.75) 48%,rgba(3,44,28,.62) 100%),
     url("cchs-campus-hero.jpeg");
   background-size:cover;
-  background-position:center center;
+  background-position:center 54%;
 }
 
-.hero:before{
+.hero::after{
   content:"";
   position:absolute;
   inset:0;
   background:
-    radial-gradient(circle at 80% 28%,rgba(255,255,255,.12),transparent 26%),
-    linear-gradient(180deg,rgba(0,0,0,.02),rgba(0,0,0,.22));
+    linear-gradient(180deg,rgba(0,0,0,.05),rgba(0,0,0,.19)),
+    radial-gradient(circle at 77% 20%,rgba(255,255,255,.12),transparent 26%);
   pointer-events:none;
 }
 
 .hero-grid{
-  width:100%;
   display:grid;
-  grid-template-columns:minmax(330px,.9fr) minmax(0,1.15fr);
-  gap:48px;
+  grid-template-columns:minmax(340px,.95fr) minmax(0,1.1fr);
+  gap:44px;
   align-items:center;
   position:relative;
   z-index:2;
-  padding:58px 0 68px;
+  padding:54px 0 58px;
 }
 
 .hero-mascot{
   display:flex;
-  justify-content:center;
   align-items:center;
+  justify-content:center;
 }
 
 .hero-mascot img{
   width:min(520px,100%);
   max-height:470px;
   object-fit:contain;
-  filter:drop-shadow(0 24px 30px rgba(0,0,0,.26));
+  filter:drop-shadow(0 24px 32px rgba(0,0,0,.26));
 }
 
 .hero-copy{
@@ -191,53 +190,48 @@ nav{
 }
 
 .hero-script{
-  font-family:"Brush Script MT","Segoe Script",cursive;
-  font-size:clamp(72px,10vw,150px);
-  line-height:.78;
-  letter-spacing:-.04em;
   margin:0;
+  font-family:"Brush Script MT","Segoe Script",cursive;
   font-weight:500;
+  font-size:clamp(82px,9vw,148px);
+  line-height:.78;
+  letter-spacing:-.035em;
   color:#fff;
-  text-shadow:0 5px 20px rgba(0,0,0,.2);
+  text-shadow:0 6px 20px rgba(0,0,0,.18);
 }
 
-.hero-rule{
-  width:min(580px,88%);
-  height:11px;
+.hero-swish{
+  width:min(600px,90%);
+  height:12px;
+  margin:6px 0 19px;
   background:var(--green);
+  border-radius:60% 20% 60% 20%;
   transform:rotate(-2deg);
-  border-radius:60% 20% 60% 30%;
-  margin:8px 0 20px;
-  box-shadow:0 4px 12px rgba(0,0,0,.18);
 }
 
 .hero-overline{
+  font-size:clamp(20px,2.2vw,34px);
+  font-weight:950;
+  letter-spacing:.2em;
   text-transform:uppercase;
-  font-size:clamp(20px,2.3vw,34px);
-  letter-spacing:.18em;
-  font-weight:900;
-  margin-bottom:2px;
 }
 
 .hero-year{
+  margin:8px 0 18px;
   font-family:Impact,Haettenschweiler,"Arial Narrow Bold",sans-serif;
-  font-size:clamp(108px,15vw,230px);
-  line-height:.77;
-  margin:6px 0 16px;
-  letter-spacing:.01em;
+  font-size:clamp(116px,15vw,230px);
+  line-height:.76;
   color:var(--green);
   -webkit-text-stroke:4px #fff;
-  text-shadow:
-    0 5px 0 rgba(255,255,255,.16),
-    0 12px 30px rgba(0,0,0,.28);
+  text-shadow:0 12px 30px rgba(0,0,0,.28);
 }
 
 .hero-tagline{
+  margin-bottom:28px;
   text-transform:uppercase;
   letter-spacing:.34em;
-  font-size:clamp(15px,1.6vw,24px);
-  font-weight:900;
-  margin-bottom:30px;
+  font-size:clamp(15px,1.6vw,23px);
+  font-weight:950;
 }
 
 .hero-actions{
@@ -248,20 +242,20 @@ nav{
 }
 
 .hero-btn{
+  min-width:180px;
   display:inline-flex;
   align-items:center;
   justify-content:center;
-  min-width:180px;
   padding:13px 20px;
   border-radius:999px;
   text-decoration:none;
   text-transform:uppercase;
-  letter-spacing:.07em;
+  letter-spacing:.075em;
   font-size:12px;
-  font-weight:900;
-  border:2px solid rgba(255,255,255,.88);
-  background:rgba(3,39,25,.5);
+  font-weight:950;
+  border:2px solid rgba(255,255,255,.9);
   color:#fff;
+  background:rgba(4,42,27,.48);
   backdrop-filter:blur(5px);
 }
 
@@ -271,14 +265,16 @@ nav{
 }
 
 .hero-btn.light{
-  background:#fff;
   color:var(--green-deep);
+  background:#fff;
   border-color:#fff;
 }
 
-.hero-btn:hover{transform:translateY(-1px)}
+.hero-btn:hover{
+  transform:translateY(-1px);
+}
 
-/* WELCOME STRIP */
+/* WELCOME */
 
 .welcome{
   background:#fff;
@@ -286,41 +282,134 @@ nav{
 }
 
 .welcome-grid{
-  min-height:210px;
   display:grid;
-  grid-template-columns:.8fr 1.3fr;
-  gap:70px;
+  grid-template-columns:.8fr 1.25fr;
+  gap:64px;
   align-items:center;
-  padding:34px 0;
+  min-height:215px;
+  padding:36px 0;
 }
 
 .welcome-mark small{
   display:block;
+  margin-bottom:6px;
   color:var(--green);
   font-size:11px;
   text-transform:uppercase;
   letter-spacing:.24em;
-  font-weight:900;
-  margin-bottom:4px;
+  font-weight:950;
 }
 
 .welcome-mark strong{
-  font-family:"Brush Script MT","Segoe Script",cursive;
   display:block;
   color:var(--green-dark);
-  font-size:clamp(52px,6vw,86px);
-  line-height:.85;
+  font-family:"Brush Script MT","Segoe Script",cursive;
   font-weight:500;
+  font-size:clamp(56px,6vw,90px);
+  line-height:.82;
 }
 
 .welcome-copy{
-  color:#516159;
-  font-size:19px;
-  line-height:1.7;
-  max-width:700px;
+  max-width:720px;
+  color:#536159;
+  font-size:18px;
+  line-height:1.8;
 }
 
-section{padding:88px 0}
+/* GREENWAVE FOREVER BAR */
+
+.forever{
+  background:linear-gradient(90deg,#075034,#0c6f43,#075034);
+  color:#fff;
+  padding:21px 0;
+}
+
+.forever-inner{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  gap:24px;
+  text-transform:uppercase;
+  letter-spacing:.28em;
+  font-size:11px;
+  font-weight:950;
+}
+
+.forever-inner::before,
+.forever-inner::after{
+  content:"";
+  width:140px;
+  max-width:22vw;
+  height:1px;
+  background:rgba(255,255,255,.46);
+}
+
+/* QUICK CARDS */
+
+.quick{
+  background:var(--cream);
+  padding:34px 0 56px;
+}
+
+.quick-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:16px;
+}
+
+.quick-card{
+  min-height:120px;
+  padding:24px;
+  border-radius:18px;
+  background:#fff;
+  border:1px solid var(--line);
+  text-decoration:none;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:18px;
+  box-shadow:0 8px 22px rgba(26,42,32,.04);
+}
+
+.quick-card:hover{
+  transform:translateY(-2px);
+  box-shadow:0 12px 30px rgba(26,42,32,.08);
+}
+
+.quick-icon{
+  flex:0 0 58px;
+  width:58px;
+  height:58px;
+  display:grid;
+  place-items:center;
+  border-radius:50%;
+  background:var(--green);
+  color:#fff;
+  font-weight:950;
+  font-size:20px;
+}
+
+.quick-card h3{
+  margin:0 0 4px;
+  font-size:19px;
+  letter-spacing:-.025em;
+}
+
+.quick-card p{
+  margin:0;
+  color:var(--muted);
+  font-size:13px;
+  line-height:1.5;
+}
+
+.quick-arrow{
+  font-size:26px;
+  color:var(--green-dark);
+}
+
+/* GENERAL */
+
+section{padding:86px 0}
 
 .sectionhead{
   display:grid;
@@ -331,126 +420,58 @@ section{padding:88px 0}
 }
 
 .eyebrow{
-  text-transform:uppercase;
-  letter-spacing:.18em;
+  margin-bottom:8px;
   color:var(--green);
   font-size:11px;
-  font-weight:900;
-  margin-bottom:8px;
+  text-transform:uppercase;
+  letter-spacing:.18em;
+  font-weight:950;
 }
 
 h2{
+  margin:0;
   font-size:clamp(40px,5vw,68px);
   line-height:.95;
   letter-spacing:-.05em;
-  margin:0;
 }
 
 .sectionhead p{
   margin:0;
   color:var(--muted);
   font-size:17px;
-  line-height:1.6;
+  line-height:1.65;
 }
 
 .btn{
   display:inline-flex;
   align-items:center;
   justify-content:center;
+  padding:14px 19px;
   border:0;
   border-radius:999px;
-  padding:14px 19px;
-  font-weight:850;
-  text-decoration:none;
-  cursor:pointer;
   background:var(--green);
   color:#fff;
-}
-
-.btn:hover{transform:translateY(-1px)}
-
-/* RECAP */
-
-.recap{background:var(--cream)}
-
-.recap-grid{
-  display:grid;
-  grid-template-columns:1.15fr .85fr;
-  gap:22px;
-}
-
-.recap-main{
-  background:var(--green-dark);
-  color:#fff;
-  padding:44px;
-  border-radius:24px;
-  min-height:390px;
-  display:flex;
-  flex-direction:column;
-  justify-content:space-between;
-  position:relative;
-  overflow:hidden;
-}
-
-.recap-main:after{
-  content:"30";
-  position:absolute;
-  right:-10px;
-  bottom:-45px;
-  font-size:190px;
-  line-height:1;
-  font-weight:950;
-  color:rgba(255,255,255,.06);
-}
-
-.recap-main .bigline{
-  font-size:clamp(42px,6vw,76px);
-  line-height:.96;
-  letter-spacing:-.05em;
+  text-decoration:none;
   font-weight:900;
-  max-width:650px;
-  position:relative;
-  z-index:1;
+  cursor:pointer;
 }
 
-.recap-main p{
-  max-width:590px;
-  color:#dcebe2;
-  font-size:17px;
-  position:relative;
-  z-index:1;
+.btn:hover{
+  transform:translateY(-1px);
 }
 
-.recap-side{
+/* PHOTO ARCHIVE */
+
+.archive-section{
   background:#fff;
-  border:1px solid var(--line);
-  border-radius:24px;
-  padding:32px;
-  display:flex;
-  flex-direction:column;
-  justify-content:space-between;
 }
-
-.recap-side h3{
-  font-size:28px;
-  margin:0 0 12px;
-  letter-spacing:-.03em;
-}
-
-.recap-side p{
-  color:var(--muted);
-  font-size:16px;
-  line-height:1.7;
-}
-
-/* ARCHIVE */
 
 .archive-shell{
+  min-height:500px;
+  overflow:hidden;
   background:#fff;
   border:1px solid var(--line);
   border-radius:24px;
-  min-height:500px;
-  overflow:hidden;
 }
 
 .gallery-frame{
@@ -467,126 +488,69 @@ h2{
   place-items:center;
   text-align:center;
   padding:42px;
-  background:linear-gradient(
-    135deg,
-    rgba(11,107,58,.08),
-    rgba(11,107,58,.02)
-  );
+  background:linear-gradient(135deg,rgba(11,107,58,.08),rgba(11,107,58,.02));
 }
 
 .archive-placeholder .num{
   font-size:120px;
+  line-height:.8;
+  color:rgba(11,107,58,.13);
   font-weight:950;
   letter-spacing:-.09em;
-  color:rgba(11,107,58,.13);
-  line-height:.8;
 }
 
 .archive-placeholder h3{
-  font-size:30px;
   margin:12px 0 8px;
+  font-size:30px;
   letter-spacing:-.03em;
 }
 
 .archive-placeholder p{
   max-width:600px;
-  color:var(--muted);
   margin:0 auto 20px;
+  color:var(--muted);
 }
 
 .upload-callout{
   margin-top:18px;
-  background:var(--green-pale);
-  border-radius:20px;
   padding:24px;
   display:flex;
-  align-items:center;
   justify-content:space-between;
+  align-items:center;
   gap:24px;
+  border-radius:20px;
+  background:var(--green-soft);
 }
 
-.upload-callout strong{font-size:19px}
+.upload-callout strong{
+  font-size:19px;
+}
 
 .upload-callout p{
   margin:4px 0 0;
   color:var(--muted);
 }
 
-/* EXPLORE */
+/* CLASSMATES */
 
-.explore{
+.classmates-section{
   background:#0b1510;
   color:#fff;
 }
 
-.explore .eyebrow{color:#88caa5}
-.explore .sectionhead p{color:#adb9b0}
-
-.tile-grid{
-  display:grid;
-  grid-template-columns:repeat(2,1fr);
-  gap:16px;
-}
-
-.tile{
-  min-height:260px;
-  padding:30px;
-  border-radius:24px;
-  text-decoration:none;
-  position:relative;
-  overflow:hidden;
-  display:flex;
-  flex-direction:column;
-  justify-content:flex-end;
-  background:#14251a;
-  border:1px solid rgba(255,255,255,.08);
-}
-
-.tile:before{
-  content:"";
-  position:absolute;
-  inset:0;
-  background:linear-gradient(135deg,transparent,rgba(255,255,255,.025));
-}
-
-.tile:hover{background:#183020}
-
-.tile small{
-  position:relative;
-  text-transform:uppercase;
-  letter-spacing:.14em;
+.classmates-section .eyebrow{
   color:#8fc7a5;
-  font-size:10px;
-  font-weight:900;
 }
 
-.tile h3{
-  position:relative;
-  font-size:36px;
-  line-height:1;
-  margin:8px 0 0;
-  letter-spacing:-.04em;
-}
-
-.tile p{
-  position:relative;
-  max-width:480px;
+.classmates-section .sectionhead p{
   color:#aeb9b0;
-  margin:12px 0 0;
-}
-
-/* CLASSMATE FORM */
-
-.form-section{
-  background:#fff;
-  padding:58px 0 72px;
 }
 
 .classmate-shell{
-  border:1px solid var(--line);
-  border-radius:24px;
   overflow:hidden;
   background:var(--paper);
+  border:1px solid rgba(255,255,255,.12);
+  border-radius:24px;
 }
 
 .classmate-frame{
@@ -598,31 +562,103 @@ h2{
 }
 
 .classmate-placeholder{
-  min-height:400px;
+  min-height:390px;
   display:grid;
   place-items:center;
-  text-align:center;
   padding:42px;
+  text-align:center;
+  color:var(--ink);
 }
 
-.classmate-placeholder p{
-  max-width:560px;
+/* REUNION CONTENT */
+
+.recap{
+  background:var(--cream);
+}
+
+.recap-grid{
+  display:grid;
+  grid-template-columns:1.15fr .85fr;
+  gap:22px;
+}
+
+.recap-main{
+  position:relative;
+  overflow:hidden;
+  min-height:390px;
+  padding:44px;
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+  border-radius:24px;
+  background:var(--green-dark);
+  color:#fff;
+}
+
+.recap-main::after{
+  content:"30";
+  position:absolute;
+  right:-10px;
+  bottom:-45px;
+  font-size:190px;
+  line-height:1;
+  font-weight:950;
+  color:rgba(255,255,255,.06);
+}
+
+.recap-main .bigline{
+  position:relative;
+  z-index:1;
+  max-width:650px;
+  font-size:clamp(42px,6vw,76px);
+  line-height:.96;
+  letter-spacing:-.05em;
+  font-weight:950;
+}
+
+.recap-main p{
+  position:relative;
+  z-index:1;
+  max-width:590px;
+  color:#dcebe2;
+  font-size:17px;
+}
+
+.recap-side{
+  padding:32px;
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+  border:1px solid var(--line);
+  border-radius:24px;
+  background:#fff;
+}
+
+.recap-side h3{
+  margin:0 0 12px;
+  font-size:28px;
+  letter-spacing:-.03em;
+}
+
+.recap-side p{
   color:var(--muted);
+  font-size:16px;
+  line-height:1.7;
 }
 
 /* FOOTER */
 
 footer{
+  padding:50px 0 24px;
   background:#07100b;
   color:#fff;
-  padding:52px 0 24px;
 }
 
 .footer-top{
   display:flex;
   justify-content:space-between;
-  gap:30px;
   align-items:center;
+  gap:30px;
 }
 
 .footer-brand strong{
@@ -632,9 +668,9 @@ footer{
 
 .footer-brand span{
   display:block;
+  margin-top:3px;
   color:#8f9c92;
   font-size:13px;
-  margin-top:3px;
 }
 
 .footer-right{
@@ -644,13 +680,13 @@ footer{
 }
 
 .fem{
-  margin-top:36px;
+  margin-top:34px;
   padding-top:18px;
   border-top:1px solid rgba(255,255,255,.07);
-  font-size:8px;
-  letter-spacing:.3em;
   color:#59645c;
   text-align:right;
+  font-size:8px;
+  letter-spacing:.3em;
 }
 
 /* MODAL */
@@ -659,22 +695,24 @@ footer{
   display:none;
   position:fixed;
   inset:0;
-  background:rgba(0,0,0,.72);
   z-index:100;
   align-items:center;
   justify-content:center;
   padding:20px;
+  background:rgba(0,0,0,.72);
 }
 
-.modal.on{display:flex}
+.modal.on{
+  display:flex;
+}
 
 .modalbox{
-  background:var(--paper);
   width:min(900px,100%);
   max-height:92vh;
   overflow:auto;
-  border-radius:22px;
   padding:22px;
+  border-radius:22px;
+  background:var(--paper);
 }
 
 .close{
@@ -692,13 +730,6 @@ footer{
   border:0;
 }
 
-.notice{
-  background:var(--green-pale);
-  padding:18px;
-  border-radius:16px;
-  color:#274232;
-}
-
 /* RESPONSIVE */
 
 @media(max-width:980px){
@@ -711,7 +742,7 @@ footer{
 
   .hero-grid{
     grid-template-columns:1fr;
-    padding:50px 0 60px;
+    padding:44px 0 56px;
   }
 
   .hero-mascot img{
@@ -719,12 +750,16 @@ footer{
   }
 
   .hero-copy{
-    margin-top:-15px;
+    margin-top:-10px;
   }
 
   .welcome-grid{
     grid-template-columns:1fr;
-    gap:20px;
+    gap:22px;
+  }
+
+  .quick-grid{
+    grid-template-columns:1fr;
   }
 
   .sectionhead,
@@ -732,33 +767,36 @@ footer{
     grid-template-columns:1fr;
   }
 
-  .tile-grid{
-    grid-template-columns:1fr;
-  }
-
   .upload-callout,
   .footer-top{
-    align-items:flex-start;
     flex-direction:column;
+    align-items:flex-start;
   }
 
-  .footer-right{text-align:left}
-  .classmate-frame{height:1050px}
+  .footer-right{
+    text-align:left;
+  }
+
+  .classmate-frame{
+    height:1050px;
+  }
 }
 
 @media(max-width:600px){
-  .wrap{width:min(100% - 24px,1180px)}
+  .wrap{
+    width:min(100% - 24px,1180px);
+  }
 
-  .navin{height:74px}
+  .navin{
+    min-height:74px;
+  }
 
-  .brand .cchs{font-size:24px}
+  .brand .cchs{
+    font-size:27px;
+  }
 
   .hero{
     background-position:58% center;
-  }
-
-  .hero-grid{
-    padding-top:34px;
   }
 
   .hero-mascot img{
@@ -766,7 +804,7 @@ footer{
   }
 
   .hero-script{
-    font-size:70px;
+    font-size:72px;
   }
 
   .hero-year{
@@ -775,21 +813,21 @@ footer{
   }
 
   .hero-actions{
-    flex-direction:column;
     width:100%;
+    flex-direction:column;
   }
 
   .hero-btn{
     width:100%;
   }
 
-  .welcome-grid{
-    min-height:auto;
-    padding:32px 0;
+  .gallery-frame{
+    height:700px;
   }
 
-  .gallery-frame{height:700px}
-  .classmate-frame{height:1180px}
+  .classmate-frame{
+    height:1180px;
+  }
 }
 </style>
 </head>
@@ -807,8 +845,7 @@ footer{
     <div class="navlinks">
       <a href="#top">Home</a>
       <a href="#photos">Photo Archive</a>
-      <a href="#explore">Classmates</a>
-      <a href="#reunion">Reunion</a>
+      <a href="#classmates">Classmates</a>
 
       <a
         class="nav-upload"
@@ -826,15 +863,18 @@ footer{
 
     <div class="hero-mascot">
       <img
-        src="greenwave-logo.png?v=3"
+        src="greenwave-logo.png?v=4"
         alt="Churchill County Greenwave mascot"
       >
     </div>
 
     <div class="hero-copy">
 
-      <h1 class="hero-script">Greenwave</h1>
-      <div class="hero-rule"></div>
+      <h1 class="hero-script">
+        Greenwave
+      </h1>
+
+      <div class="hero-swish"></div>
 
       <div class="hero-overline">
         CCHS Class of
@@ -858,15 +898,16 @@ footer{
 
         <a
           class="hero-btn light"
-          href="#update">
+          href="#classmates">
           Classmates
         </a>
 
-        <a
+        <button
           class="hero-btn"
-          href="#reunion">
-          Reunion
-        </a>
+          type="button"
+          onclick="openUpload()">
+          Share Photos
+        </button>
 
       </div>
 
@@ -876,6 +917,7 @@ footer{
 </header>
 
 <section class="welcome">
+
   <div class="wrap welcome-grid">
 
     <div class="welcome-mark">
@@ -890,66 +932,81 @@ footer{
     </div>
 
   </div>
+
 </section>
 
-<section class="recap" id="reunion">
-  <div class="wrap">
+<div class="forever">
+  <div class="wrap forever-inner">
+    Greenwave Forever
+  </div>
+</div>
 
-    <div class="sectionhead">
-      <div>
-        <div class="eyebrow">Reunion Weekend</div>
-        <h2>We came home.</h2>
+<section class="quick">
+
+  <div class="wrap quick-grid">
+
+    <a class="quick-card" href="#photos">
+
+      <div class="quick-icon">
+        📷
       </div>
 
-      <p>
-        Thirty years later, a bunch of us ended up back in Fallon for the weekend.
-        The full recap is coming. For now, we're collecting the pictures and trying
-        not to lose any of them in a group text.
-      </p>
-    </div>
-
-    <div class="recap-grid">
-
-      <div class="recap-main">
-        <div class="bigline">
-          Same people.<br>
-          More stories.
-        </div>
-
-        <p>
-          Reunion photos, old high school pictures, whatever somebody found
-          in a box at their parents' house. If it belongs to this class,
-          it belongs here.
-        </p>
+      <div style="flex:1">
+        <h3>Photo Archive</h3>
+        <p>Reunion, high school, and everything in between.</p>
       </div>
 
-      <div class="recap-side">
-        <div>
-          <h3>The weekend, eventually.</h3>
+      <div class="quick-arrow">›</div>
 
-          <p>
-            I'll add the real recap once I've got the words for it.
-            Until then, consider this the holding spot for the photos,
-            dumb stories, surprisingly good hugs, and everything else
-            that made the weekend what it was.
-          </p>
-        </div>
+    </a>
 
-        <a class="btn" href="#photos">See the Photos</a>
+    <a class="quick-card" href="#classmates">
+
+      <div class="quick-icon">
+        👥
       </div>
 
-    </div>
+      <div style="flex:1">
+        <h3>Classmates</h3>
+        <p>Tell us where you landed. Find old friends.</p>
+      </div>
+
+      <div class="quick-arrow">›</div>
+
+    </a>
+
+    <a class="quick-card" href="#reunion">
+
+      <div class="quick-icon">
+        30
+      </div>
+
+      <div style="flex:1">
+        <h3>Reunion Weekend</h3>
+        <p>Photos, recap, and whatever we can remember.</p>
+      </div>
+
+      <div class="quick-arrow">›</div>
+
+    </a>
 
   </div>
+
 </section>
 
-<section id="photos">
+<section class="archive-section" id="photos">
   <div class="wrap">
 
     <div class="sectionhead">
+
       <div>
-        <div class="eyebrow">The Archive</div>
-        <h2>Send the evidence.</h2>
+        <div class="eyebrow">
+          The Archive
+        </div>
+
+        <h2>
+          Send the evidence.
+        </h2>
       </div>
 
       <p>
@@ -957,6 +1014,7 @@ footer{
         Senior year, football games, graduation, random weekends,
         bad haircuts, worse clothes. Send it all.
       </p>
+
     </div>
 
     <div class="archive-shell">
@@ -968,7 +1026,9 @@ footer{
         <div>
           <div class="num">96</div>
 
-          <h3>The gallery is almost live.</h3>
+          <h3>
+            The gallery is almost live.
+          </h3>
 
           <p>
             Once the Google Drive photo connection is finished,
@@ -997,7 +1057,9 @@ footer{
     <div class="upload-callout">
 
       <div>
-        <strong>Got pictures?</strong>
+        <strong>
+          Got pictures?
+        </strong>
 
         <p>
           Upload them. They go into a private review folder first,
@@ -1017,68 +1079,27 @@ footer{
   </div>
 </section>
 
-<section class="explore" id="explore">
+<section class="classmates-section" id="classmates">
   <div class="wrap">
 
     <div class="sectionhead">
+
       <div>
-        <div class="eyebrow">More than one weekend</div>
-        <h2>This is ours now.</h2>
+        <div class="eyebrow">
+          Classmates
+        </div>
+
+        <h2>
+          Where'd everybody go?
+        </h2>
       </div>
 
       <p>
-        The reunion got this started. The idea is to keep it going,
-        without turning it into another social network nobody asked for.
+        Share what you're comfortable sharing. Nothing appears publicly
+        until an admin approves it, and private contact info stays private.
       </p>
-    </div>
-
-    <div class="tile-grid">
-
-      <a class="tile" href="#update">
-        <small>Classmates</small>
-        <h3>Where are you now?</h3>
-
-        <p>
-          Share as much or as little as you want. City, work, family,
-          adventures, whatever makes sense thirty years later.
-        </p>
-      </a>
-
-      <a class="tile" href="#photos">
-        <small>Then + Now</small>
-        <h3>Photo Archive</h3>
-
-        <p>
-          The reunion, high school, graduation, and anything else
-          we probably thought we'd remember forever.
-        </p>
-      </a>
-
-      <div class="tile">
-        <small>Coming Soon</small>
-        <h3>Stories</h3>
-
-        <p>
-          The stuff that won't fit in a caption.
-          Teachers, road trips, games, bad decisions, good people.
-        </p>
-      </div>
-
-      <div class="tile">
-        <small>Coming Soon</small>
-        <h3>In Memory</h3>
-
-        <p>
-          A simple place to remember classmates who should still be here with us.
-        </p>
-      </div>
 
     </div>
-  </div>
-</section>
-
-<section class="form-section" id="update">
-  <div class="wrap">
 
     <div class="classmate-shell">
 
@@ -1087,12 +1108,16 @@ footer{
         class="classmate-placeholder">
 
         <div>
-          <div class="eyebrow">Your turn</div>
-          <h2>Tell us where you landed.</h2>
+          <div class="eyebrow">
+            Your turn
+          </div>
+
+          <h2 style="font-size:44px">
+            Tell us where you landed.
+          </h2>
 
           <p>
             The classmate form is being connected.
-            Check back shortly.
           </p>
         </div>
 
@@ -1110,11 +1135,80 @@ footer{
   </div>
 </section>
 
+<section class="recap" id="reunion">
+  <div class="wrap">
+
+    <div class="sectionhead">
+
+      <div>
+        <div class="eyebrow">
+          Reunion Weekend
+        </div>
+
+        <h2>
+          We came home.
+        </h2>
+      </div>
+
+      <p>
+        Thirty years later, a bunch of us ended up back in Fallon.
+        The full recap is coming. For now, we're collecting pictures
+        and trying not to lose any of them in a group text.
+      </p>
+
+    </div>
+
+    <div class="recap-grid">
+
+      <div class="recap-main">
+
+        <div class="bigline">
+          Same people.<br>
+          More stories.
+        </div>
+
+        <p>
+          Reunion photos, old high school pictures, whatever somebody found
+          in a box at their parents' house. If it belongs to this class,
+          it belongs here.
+        </p>
+
+      </div>
+
+      <div class="recap-side">
+
+        <div>
+          <h3>
+            The weekend, eventually.
+          </h3>
+
+          <p>
+            I'll add the real recap once I've got the words for it.
+            Until then, consider this the holding spot for the photos,
+            dumb stories, surprisingly good hugs, and everything else
+            that made the weekend what it was.
+          </p>
+        </div>
+
+        <a
+          class="btn"
+          href="#photos">
+          See the Photos
+        </a>
+
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
 <footer>
 
   <div class="wrap footer-top">
 
     <div class="footer-brand">
+
       <strong>
         Churchill County High School · Class of 1996
       </strong>
@@ -1122,6 +1216,7 @@ footer{
       <span>
         Fallon, Nevada
       </span>
+
     </div>
 
     <div class="footer-right">
@@ -1136,7 +1231,9 @@ footer{
 
 </footer>
 
-<div class="modal" id="uploadModal">
+<div
+  class="modal"
+  id="uploadModal">
 
   <div class="modalbox">
 
@@ -1146,22 +1243,6 @@ footer{
       aria-label="Close">
       ×
     </button>
-
-    <div id="uploadSetup">
-
-      <div class="eyebrow">
-        Photo Upload
-      </div>
-
-      <h2 style="font-size:42px;margin-bottom:16px">
-        Almost there.
-      </h2>
-
-      <div class="notice">
-        The uploader is being connected.
-      </div>
-
-    </div>
 
     <iframe
       id="uploadFrame"
@@ -1221,7 +1302,7 @@ if (photoAppReady) {
     'none';
 }
 
-/* PHOTO UPLOAD */
+/* UPLOAD MODAL */
 
 function openUpload() {
 
@@ -1231,9 +1312,6 @@ function openUpload() {
   const frame =
     document.getElementById('uploadFrame');
 
-  const setup =
-    document.getElementById('uploadSetup');
-
   if (photoAppReady) {
 
     frame.src =
@@ -1241,55 +1319,43 @@ function openUpload() {
 
     frame.style.display =
       'block';
-
-    setup.style.display =
-      'none';
-
-  } else {
-
-    frame.style.display =
-      'none';
-
-    setup.style.display =
-      'block';
   }
 
   modal.classList.add('on');
 }
 
-function closeModal(id) {
+function closeUpload() {
 
   document
-    .getElementById(id)
+    .getElementById('uploadModal')
     .classList
     .remove('on');
 }
 
 document.getElementById('uploadClose').onclick =
-  () => closeModal('uploadModal');
+  closeUpload;
 
-document.querySelectorAll('.modal').forEach(
-  modal => modal.addEventListener(
+document
+  .getElementById('uploadModal')
+  .addEventListener(
     'click',
     event => {
 
-      if (event.target === modal) {
-        modal.classList.remove('on');
+      if (
+        event.target ===
+        document.getElementById('uploadModal')
+      ) {
+        closeUpload();
       }
     }
-  )
-);
+  );
 
 document.addEventListener(
   'keydown',
   event => {
 
     if (event.key === 'Escape') {
-      document
-        .querySelectorAll('.modal.on')
-        .forEach(
-          modal => modal.classList.remove('on')
-        );
+      closeUpload();
     }
   }
 );

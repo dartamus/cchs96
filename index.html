@@ -481,7 +481,7 @@ h2{
   color:var(--muted);
 }
 
-/* EXPLORE */
+/* CLASSMATES */
 
 .explore{
   background:#0b1510;
@@ -496,59 +496,58 @@ h2{
   color:#adb9b0;
 }
 
-.tile-grid{
-  display:grid;
-  grid-template-columns:repeat(2,1fr);
-  gap:16px;
+.directory-shell{
+  background:var(--paper);
+  border:1px solid rgba(255,255,255,.12);
+  border-radius:24px;
+  overflow:hidden;
+  min-height:400px;
 }
 
-.tile{
-  min-height:260px;
-  padding:30px;
-  border-radius:24px;
-  text-decoration:none;
-  position:relative;
-  overflow:hidden;
-  display:flex;
-  flex-direction:column;
-  justify-content:flex-end;
+.directory-frame{
+  display:none;
+  width:100%;
+  height:650px;
+  border:0;
+  background:transparent;
+}
+
+.directory-placeholder{
+  min-height:400px;
+  display:grid;
+  place-items:center;
+  text-align:center;
+  padding:42px;
+  color:var(--muted);
+  background:var(--paper);
+}
+
+.classmate-cta{
+  margin-top:18px;
   background:#14251a;
   border:1px solid rgba(255,255,255,.08);
+  border-radius:20px;
+  padding:24px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:24px;
 }
 
-.tile:before{
-  content:"";
-  position:absolute;
-  inset:0;
-  background:linear-gradient(135deg,transparent,rgba(255,255,255,.025));
+.classmate-cta strong{
+  display:block;
+  font-size:19px;
 }
 
-.tile:hover{
-  background:#183020;
-}
-
-.tile small{
-  position:relative;
-  text-transform:uppercase;
-  letter-spacing:.14em;
-  color:#8fc7a5;
-  font-size:10px;
-  font-weight:900;
-}
-
-.tile h3{
-  position:relative;
-  font-size:36px;
-  line-height:1;
-  margin:8px 0 0;
-  letter-spacing:-.04em;
-}
-
-.tile p{
-  position:relative;
-  max-width:480px;
+.classmate-cta p{
+  margin:4px 0 0;
   color:#aeb9b0;
-  margin:12px 0 0;
+}
+
+.classmate-cta .btn{
+  background:#fff;
+  color:var(--green-dark);
+  flex:0 0 auto;
 }
 
 /* CLASSMATE FORM */
@@ -629,6 +628,18 @@ footer{
   color:#8f9c92;
   font-size:13px;
   text-align:right;
+}
+
+.admin-link{
+  display:inline-block;
+  margin-top:8px;
+  color:#718078;
+  font-size:11px;
+  text-decoration:none;
+}
+
+.admin-link:hover{
+  color:#fff;
 }
 
 .fem{
@@ -722,11 +733,8 @@ footer{
     grid-template-columns:1fr;
   }
 
-  .tile-grid{
-    grid-template-columns:1fr;
-  }
-
   .upload-callout,
+  .classmate-cta,
   .footer-top{
     align-items:flex-start;
     flex-direction:column;
@@ -734,6 +742,10 @@ footer{
 
   .footer-right{
     text-align:left;
+  }
+
+  .directory-frame{
+    height:850px;
   }
 
   .classmate-frame{
@@ -748,6 +760,10 @@ footer{
 
   .gallery-frame{
     height:700px;
+  }
+
+  .directory-frame{
+    height:1000px;
   }
 
   .classmate-frame{
@@ -1035,94 +1051,61 @@ footer{
       <div>
 
         <div class="eyebrow">
-          More than one weekend
+          Classmates
         </div>
 
         <h2>
-          This is ours now.
+          Where'd everybody go?
         </h2>
 
       </div>
 
       <p>
-        The reunion got this started. The idea is to keep it going,
-        without turning it into another social network nobody asked for.
+        Thirty years sent everybody in different directions.
+        Here's where people landed, or at least the ones who've checked in so far.
       </p>
 
     </div>
 
-    <div class="tile-grid">
+    <div class="directory-shell">
+
+      <div
+        id="directorySetup"
+        class="directory-placeholder">
+
+        Loading the classmate directory...
+
+      </div>
+
+      <iframe
+        id="directoryFrame"
+        class="directory-frame"
+        title="CCHS Class of 1996 classmate directory"
+        loading="lazy">
+      </iframe>
+
+    </div>
+
+    <div class="classmate-cta">
+
+      <div>
+
+        <strong>
+          Missing from the list?
+        </strong>
+
+        <p>
+          Tell us where you landed. Nothing appears publicly
+          until an admin approves it.
+        </p>
+
+      </div>
 
       <a
-        class="tile"
+        class="btn"
         href="#update">
-
-        <small>
-          Classmates
-        </small>
-
-        <h3>
-          Where are you now?
-        </h3>
-
-        <p>
-          Share as much or as little as you want. City, work, family,
-          adventures, whatever makes sense thirty years later.
-        </p>
-
+        Add Your Info
       </a>
-
-      <a
-        class="tile"
-        href="#photos">
-
-        <small>
-          Then + Now
-        </small>
-
-        <h3>
-          Photo Archive
-        </h3>
-
-        <p>
-          The reunion, high school, graduation, and anything else
-          we probably thought we'd remember forever.
-        </p>
-
-      </a>
-
-      <div class="tile">
-
-        <small>
-          Coming Soon
-        </small>
-
-        <h3>
-          Stories
-        </h3>
-
-        <p>
-          The stuff that won't fit in a caption.
-          Teachers, road trips, games, bad decisions, good people.
-        </p>
-
-      </div>
-
-      <div class="tile">
-
-        <small>
-          Coming Soon
-        </small>
-
-        <h3>
-          In Memory
-        </h3>
-
-        <p>
-          A simple place to remember classmates who should still be here with us.
-        </p>
-
-      </div>
 
     </div>
 
@@ -1198,6 +1181,15 @@ footer{
 
     <div class="footer-right">
       Independent alumni site. Not an official Churchill County School District website.
+      <br>
+
+      <a
+        class="admin-link"
+        href="https://docs.google.com/spreadsheets/d/1lvkEDOGQb_d-I5IN_6Xevy6UkWqBiX8e94kcvWKIqQc/edit#gid=413139433"
+        target="_blank"
+        rel="noopener">
+        Admin
+      </a>
     </div>
 
   </div>
@@ -1256,6 +1248,26 @@ if (photoAppReady) {
     'block';
 
   gallerySetup.style.display =
+    'none';
+}
+
+/* PUBLIC CLASSMATE DIRECTORY */
+
+const directoryFrame =
+  document.getElementById('directoryFrame');
+
+const directorySetup =
+  document.getElementById('directorySetup');
+
+if (photoAppReady) {
+
+  directoryFrame.src =
+    PHOTO_APP_URL + '?view=directory';
+
+  directoryFrame.style.display =
+    'block';
+
+  directorySetup.style.display =
     'none';
 }
 

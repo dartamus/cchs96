@@ -3,147 +3,793 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<meta name="theme-color" content="#004b2b" />
+<meta name="theme-color" content="#06452b" />
+
 <title>CCHS Class of 1996 | Fallon, Nevada</title>
-<meta name="description" content="The online home of the Churchill County High School Class of 1996 in Fallon, Nevada." />
+
+<meta
+  name="description"
+  content="The online home of the Churchill County High School Class of 1996 in Fallon, Nevada."
+/>
+
+<link rel="icon" type="image/png" href="greenwave-logo.png?v=3" />
+
 <style>
 :root{
-  --green:#0b6b3a;
-  --green-dark:#063f26;
-  --green-deep:#032a1a;
+  --green:#0b7a44;
+  --green-dark:#06452b;
+  --green-deep:#032719;
   --green-pale:#e7f0e9;
-  --cream:#f5f1e8;
+  --cream:#f4f0e6;
   --paper:#fbfaf7;
   --ink:#111712;
   --muted:#687169;
   --line:#d8ddd8;
   --white:#fff;
 }
+
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{margin:0;font-family:Inter,ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:var(--paper);color:var(--ink);line-height:1.5}
+
+body{
+  margin:0;
+  font-family:Inter,ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  background:var(--paper);
+  color:var(--ink);
+  line-height:1.5;
+}
+
 a{color:inherit}
 button,input,textarea,select{font:inherit}
 img{max-width:100%}
 .wrap{width:min(1180px,calc(100% - 40px));margin:0 auto}
 
-nav{position:sticky;top:0;z-index:50;background:rgba(251,250,247,.93);backdrop-filter:blur(14px);border-bottom:1px solid rgba(10,35,22,.08)}
-.navin{height:78px;display:flex;align-items:center;justify-content:space-between;gap:24px}
-.brand{display:flex;align-items:center;gap:12px;text-decoration:none}
-.brand img{width:46px;height:46px;object-fit:contain;border-radius:50%;background:#fff}
-.brand-copy{line-height:1.05}
-.brand-copy small{display:block;text-transform:uppercase;letter-spacing:.14em;font-size:9px;color:var(--muted);font-weight:800;margin-bottom:4px}
-.brand-copy strong{font-size:17px;letter-spacing:-.02em}
-.navlinks{display:flex;gap:26px;align-items:center;font-size:14px;font-weight:750}
-.navlinks a{text-decoration:none}
-.navlinks a:hover{color:var(--green)}
-.nav-upload{border:1px solid var(--green);padding:10px 14px;border-radius:999px;color:var(--green)}
+/* NAV */
 
-.hero{min-height:calc(100vh - 78px);display:flex;align-items:center;position:relative;overflow:hidden;background:
-radial-gradient(circle at 80% 20%,rgba(255,255,255,.12),transparent 25%),
-linear-gradient(135deg,var(--green-deep),var(--green-dark) 55%,#0c7140);color:#fff}
-.hero:after{content:"96";position:absolute;right:-35px;bottom:-100px;font-size:clamp(260px,35vw,560px);font-weight:950;letter-spacing:-.1em;line-height:.75;color:rgba(255,255,255,.055);pointer-events:none}
-.hero-grid{display:grid;grid-template-columns:minmax(0,1fr) 360px;gap:60px;align-items:center;position:relative;z-index:2;padding:70px 0}
-.hero-mark{width:210px;aspect-ratio:1;border-radius:50%;background:rgba(255,255,255,.97);display:grid;place-items:center;margin:auto;box-shadow:0 28px 70px rgba(0,0,0,.22)}
-.hero-mark img{width:82%;height:82%;object-fit:contain}
-.hero-kicker{text-transform:uppercase;letter-spacing:.22em;font-size:12px;font-weight:800;color:#b9ddc8;margin-bottom:18px}
-.hero h1{font-size:clamp(58px,8vw,112px);line-height:.85;letter-spacing:-.065em;margin:0;max-width:850px}
-.hero h1 span{display:block;font-size:.42em;letter-spacing:-.035em;margin-top:20px;color:#d7eadf}
-.hero p{max-width:700px;font-size:20px;line-height:1.6;color:#e6efe9;margin:30px 0 34px}
-.actions{display:flex;flex-wrap:wrap;gap:12px}
-.btn{display:inline-flex;align-items:center;justify-content:center;border:0;border-radius:999px;padding:14px 19px;font-weight:850;text-decoration:none;cursor:pointer;background:var(--green);color:#fff}
-.hero .btn{background:#fff;color:var(--green-dark)}
-.btn.alt{background:transparent;color:inherit;border:1px solid currentColor}
-.hero .btn.alt{color:#fff;border-color:rgba(255,255,255,.55)}
-.btn:hover{transform:translateY(-1px)}
+nav{
+  position:sticky;
+  top:0;
+  z-index:50;
+  background:rgba(251,250,247,.96);
+  backdrop-filter:blur(14px);
+  border-bottom:1px solid rgba(10,35,22,.08);
+}
 
-.intro-strip{background:#fff;border-bottom:1px solid var(--line)}
-.intro-grid{display:grid;grid-template-columns:repeat(4,1fr)}
-.intro-grid a{padding:22px 24px;text-decoration:none;border-right:1px solid var(--line);font-weight:800}
-.intro-grid a:last-child{border-right:0}
-.intro-grid small{display:block;text-transform:uppercase;letter-spacing:.13em;color:var(--muted);font-size:9px;margin-bottom:4px}
-.intro-grid a:hover{background:var(--green-pale)}
+.navin{
+  height:82px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:26px;
+}
+
+.brand{
+  text-decoration:none;
+  display:flex;
+  flex-direction:column;
+  line-height:.95;
+}
+
+.brand .cchs{
+  font-size:29px;
+  font-weight:950;
+  letter-spacing:.02em;
+  color:var(--green-dark);
+}
+
+.brand .class{
+  margin-top:6px;
+  font-size:12px;
+  text-transform:uppercase;
+  letter-spacing:.2em;
+  font-weight:850;
+  color:#385847;
+}
+
+.navlinks{
+  display:flex;
+  gap:28px;
+  align-items:center;
+  font-size:13px;
+  font-weight:850;
+  text-transform:uppercase;
+  letter-spacing:.08em;
+}
+
+.navlinks a{
+  text-decoration:none;
+  position:relative;
+}
+
+.navlinks a:not(.nav-upload):after{
+  content:"";
+  position:absolute;
+  left:0;
+  right:100%;
+  bottom:-8px;
+  height:3px;
+  border-radius:999px;
+  background:var(--green);
+  transition:right .18s ease;
+}
+
+.navlinks a:not(.nav-upload):hover:after{
+  right:0;
+}
+
+.nav-upload{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding:12px 18px;
+  border-radius:999px;
+  background:var(--green);
+  color:#fff;
+  border:1px solid var(--green);
+}
+
+.nav-upload:hover{
+  background:var(--green-dark);
+}
+
+/* HERO */
+
+.hero{
+  min-height:680px;
+  position:relative;
+  overflow:hidden;
+  color:#fff;
+  display:flex;
+  align-items:center;
+  background-image:
+    linear-gradient(90deg,rgba(2,39,25,.88) 0%,rgba(3,52,32,.78) 42%,rgba(3,48,30,.62) 100%),
+    linear-gradient(180deg,rgba(2,29,19,.25),rgba(2,29,19,.25)),
+    url("cchs-campus-hero.jpeg");
+  background-size:cover;
+  background-position:center center;
+}
+
+.hero:before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:
+    radial-gradient(circle at 80% 28%,rgba(255,255,255,.12),transparent 26%),
+    linear-gradient(180deg,rgba(0,0,0,.02),rgba(0,0,0,.22));
+  pointer-events:none;
+}
+
+.hero-grid{
+  width:100%;
+  display:grid;
+  grid-template-columns:minmax(330px,.9fr) minmax(0,1.15fr);
+  gap:48px;
+  align-items:center;
+  position:relative;
+  z-index:2;
+  padding:58px 0 68px;
+}
+
+.hero-mascot{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+
+.hero-mascot img{
+  width:min(520px,100%);
+  max-height:470px;
+  object-fit:contain;
+  filter:drop-shadow(0 24px 30px rgba(0,0,0,.26));
+}
+
+.hero-copy{
+  text-align:center;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+}
+
+.hero-script{
+  font-family:"Brush Script MT","Segoe Script",cursive;
+  font-size:clamp(72px,10vw,150px);
+  line-height:.78;
+  letter-spacing:-.04em;
+  margin:0;
+  font-weight:500;
+  color:#fff;
+  text-shadow:0 5px 20px rgba(0,0,0,.2);
+}
+
+.hero-rule{
+  width:min(580px,88%);
+  height:11px;
+  background:var(--green);
+  transform:rotate(-2deg);
+  border-radius:60% 20% 60% 30%;
+  margin:8px 0 20px;
+  box-shadow:0 4px 12px rgba(0,0,0,.18);
+}
+
+.hero-overline{
+  text-transform:uppercase;
+  font-size:clamp(20px,2.3vw,34px);
+  letter-spacing:.18em;
+  font-weight:900;
+  margin-bottom:2px;
+}
+
+.hero-year{
+  font-family:Impact,Haettenschweiler,"Arial Narrow Bold",sans-serif;
+  font-size:clamp(108px,15vw,230px);
+  line-height:.77;
+  margin:6px 0 16px;
+  letter-spacing:.01em;
+  color:var(--green);
+  -webkit-text-stroke:4px #fff;
+  text-shadow:
+    0 5px 0 rgba(255,255,255,.16),
+    0 12px 30px rgba(0,0,0,.28);
+}
+
+.hero-tagline{
+  text-transform:uppercase;
+  letter-spacing:.34em;
+  font-size:clamp(15px,1.6vw,24px);
+  font-weight:900;
+  margin-bottom:30px;
+}
+
+.hero-actions{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap:12px;
+}
+
+.hero-btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-width:180px;
+  padding:13px 20px;
+  border-radius:999px;
+  text-decoration:none;
+  text-transform:uppercase;
+  letter-spacing:.07em;
+  font-size:12px;
+  font-weight:900;
+  border:2px solid rgba(255,255,255,.88);
+  background:rgba(3,39,25,.5);
+  color:#fff;
+  backdrop-filter:blur(5px);
+}
+
+.hero-btn.primary{
+  background:var(--green);
+  border-color:var(--green);
+}
+
+.hero-btn.light{
+  background:#fff;
+  color:var(--green-deep);
+  border-color:#fff;
+}
+
+.hero-btn:hover{transform:translateY(-1px)}
+
+/* WELCOME STRIP */
+
+.welcome{
+  background:#fff;
+  border-bottom:1px solid var(--line);
+}
+
+.welcome-grid{
+  min-height:210px;
+  display:grid;
+  grid-template-columns:.8fr 1.3fr;
+  gap:70px;
+  align-items:center;
+  padding:34px 0;
+}
+
+.welcome-mark small{
+  display:block;
+  color:var(--green);
+  font-size:11px;
+  text-transform:uppercase;
+  letter-spacing:.24em;
+  font-weight:900;
+  margin-bottom:4px;
+}
+
+.welcome-mark strong{
+  font-family:"Brush Script MT","Segoe Script",cursive;
+  display:block;
+  color:var(--green-dark);
+  font-size:clamp(52px,6vw,86px);
+  line-height:.85;
+  font-weight:500;
+}
+
+.welcome-copy{
+  color:#516159;
+  font-size:19px;
+  line-height:1.7;
+  max-width:700px;
+}
 
 section{padding:88px 0}
-.sectionhead{display:grid;grid-template-columns:1fr minmax(260px,460px);gap:40px;align-items:end;margin-bottom:34px}
-.eyebrow{text-transform:uppercase;letter-spacing:.18em;color:var(--green);font-size:11px;font-weight:900;margin-bottom:8px}
-h2{font-size:clamp(40px,5vw,68px);line-height:.95;letter-spacing:-.05em;margin:0}
-.sectionhead p{margin:0;color:var(--muted);font-size:17px;line-height:1.6}
+
+.sectionhead{
+  display:grid;
+  grid-template-columns:1fr minmax(260px,460px);
+  gap:40px;
+  align-items:end;
+  margin-bottom:34px;
+}
+
+.eyebrow{
+  text-transform:uppercase;
+  letter-spacing:.18em;
+  color:var(--green);
+  font-size:11px;
+  font-weight:900;
+  margin-bottom:8px;
+}
+
+h2{
+  font-size:clamp(40px,5vw,68px);
+  line-height:.95;
+  letter-spacing:-.05em;
+  margin:0;
+}
+
+.sectionhead p{
+  margin:0;
+  color:var(--muted);
+  font-size:17px;
+  line-height:1.6;
+}
+
+.btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  border:0;
+  border-radius:999px;
+  padding:14px 19px;
+  font-weight:850;
+  text-decoration:none;
+  cursor:pointer;
+  background:var(--green);
+  color:#fff;
+}
+
+.btn:hover{transform:translateY(-1px)}
+
+/* RECAP */
 
 .recap{background:var(--cream)}
-.recap-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:22px}
-.recap-main{background:var(--green-dark);color:#fff;padding:44px;border-radius:24px;min-height:390px;display:flex;flex-direction:column;justify-content:space-between;position:relative;overflow:hidden}
-.recap-main:after{content:"30";position:absolute;right:-10px;bottom:-45px;font-size:190px;line-height:1;font-weight:950;color:rgba(255,255,255,.06)}
-.recap-main .bigline{font-size:clamp(42px,6vw,76px);line-height:.96;letter-spacing:-.05em;font-weight:900;max-width:650px;position:relative;z-index:1}
-.recap-main p{max-width:590px;color:#dcebe2;font-size:17px;position:relative;z-index:1}
-.recap-side{background:#fff;border:1px solid var(--line);border-radius:24px;padding:32px;display:flex;flex-direction:column;justify-content:space-between}
-.recap-side h3{font-size:28px;margin:0 0 12px;letter-spacing:-.03em}
-.recap-side p{color:var(--muted);font-size:16px;line-height:1.7}
 
-.archive-shell{background:#fff;border:1px solid var(--line);border-radius:24px;min-height:500px;overflow:hidden}
-.gallery-frame{display:none;width:100%;height:760px;border:0;background:transparent}
-.archive-placeholder{min-height:500px;display:grid;place-items:center;text-align:center;padding:42px;background:
-linear-gradient(135deg,rgba(11,107,58,.08),rgba(11,107,58,.02))}
-.archive-placeholder .num{font-size:120px;font-weight:950;letter-spacing:-.09em;color:rgba(11,107,58,.13);line-height:.8}
-.archive-placeholder h3{font-size:30px;margin:12px 0 8px;letter-spacing:-.03em}
-.archive-placeholder p{max-width:600px;color:var(--muted);margin:0 auto 20px}
-.upload-callout{margin-top:18px;background:var(--green-pale);border-radius:20px;padding:24px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+.recap-grid{
+  display:grid;
+  grid-template-columns:1.15fr .85fr;
+  gap:22px;
+}
+
+.recap-main{
+  background:var(--green-dark);
+  color:#fff;
+  padding:44px;
+  border-radius:24px;
+  min-height:390px;
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+  position:relative;
+  overflow:hidden;
+}
+
+.recap-main:after{
+  content:"30";
+  position:absolute;
+  right:-10px;
+  bottom:-45px;
+  font-size:190px;
+  line-height:1;
+  font-weight:950;
+  color:rgba(255,255,255,.06);
+}
+
+.recap-main .bigline{
+  font-size:clamp(42px,6vw,76px);
+  line-height:.96;
+  letter-spacing:-.05em;
+  font-weight:900;
+  max-width:650px;
+  position:relative;
+  z-index:1;
+}
+
+.recap-main p{
+  max-width:590px;
+  color:#dcebe2;
+  font-size:17px;
+  position:relative;
+  z-index:1;
+}
+
+.recap-side{
+  background:#fff;
+  border:1px solid var(--line);
+  border-radius:24px;
+  padding:32px;
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+}
+
+.recap-side h3{
+  font-size:28px;
+  margin:0 0 12px;
+  letter-spacing:-.03em;
+}
+
+.recap-side p{
+  color:var(--muted);
+  font-size:16px;
+  line-height:1.7;
+}
+
+/* ARCHIVE */
+
+.archive-shell{
+  background:#fff;
+  border:1px solid var(--line);
+  border-radius:24px;
+  min-height:500px;
+  overflow:hidden;
+}
+
+.gallery-frame{
+  display:none;
+  width:100%;
+  height:760px;
+  border:0;
+  background:transparent;
+}
+
+.archive-placeholder{
+  min-height:500px;
+  display:grid;
+  place-items:center;
+  text-align:center;
+  padding:42px;
+  background:linear-gradient(
+    135deg,
+    rgba(11,107,58,.08),
+    rgba(11,107,58,.02)
+  );
+}
+
+.archive-placeholder .num{
+  font-size:120px;
+  font-weight:950;
+  letter-spacing:-.09em;
+  color:rgba(11,107,58,.13);
+  line-height:.8;
+}
+
+.archive-placeholder h3{
+  font-size:30px;
+  margin:12px 0 8px;
+  letter-spacing:-.03em;
+}
+
+.archive-placeholder p{
+  max-width:600px;
+  color:var(--muted);
+  margin:0 auto 20px;
+}
+
+.upload-callout{
+  margin-top:18px;
+  background:var(--green-pale);
+  border-radius:20px;
+  padding:24px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:24px;
+}
+
 .upload-callout strong{font-size:19px}
-.upload-callout p{margin:4px 0 0;color:var(--muted)}
 
-.explore{background:#0b1510;color:#fff}
+.upload-callout p{
+  margin:4px 0 0;
+  color:var(--muted);
+}
+
+/* EXPLORE */
+
+.explore{
+  background:#0b1510;
+  color:#fff;
+}
+
 .explore .eyebrow{color:#88caa5}
 .explore .sectionhead p{color:#adb9b0}
-.tile-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
-.tile{min-height:260px;padding:30px;border-radius:24px;text-decoration:none;position:relative;overflow:hidden;display:flex;flex-direction:column;justify-content:flex-end;background:#14251a;border:1px solid rgba(255,255,255,.08)}
-.tile:before{content:"";position:absolute;inset:0;background:linear-gradient(135deg,transparent,rgba(255,255,255,.025))}
+
+.tile-grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:16px;
+}
+
+.tile{
+  min-height:260px;
+  padding:30px;
+  border-radius:24px;
+  text-decoration:none;
+  position:relative;
+  overflow:hidden;
+  display:flex;
+  flex-direction:column;
+  justify-content:flex-end;
+  background:#14251a;
+  border:1px solid rgba(255,255,255,.08);
+}
+
+.tile:before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(135deg,transparent,rgba(255,255,255,.025));
+}
+
 .tile:hover{background:#183020}
-.tile small{position:relative;text-transform:uppercase;letter-spacing:.14em;color:#8fc7a5;font-size:10px;font-weight:900}
-.tile h3{position:relative;font-size:36px;line-height:1;margin:8px 0 0;letter-spacing:-.04em}
-.tile p{position:relative;max-width:480px;color:#aeb9b0;margin:12px 0 0}
 
-.form-section{background:#fff}
-.form-card{border:1px solid var(--line);border-radius:24px;padding:32px;background:var(--paper)}
-.formgrid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
-.field{display:flex;flex-direction:column;gap:7px}
-.field.full{grid-column:1/-1}
-.field label{font-size:11px;text-transform:uppercase;letter-spacing:.1em;font-weight:900;color:#344238}
-.field input,.field textarea,.field select{padding:14px 15px;border:1px solid #cdd4ce;border-radius:12px;background:#fff;color:var(--ink);outline:none}
-.field textarea{min-height:120px;resize:vertical}
-.field input:focus,.field textarea:focus,.field select:focus{border-color:var(--green)}
-.fine{color:var(--muted);font-size:12px;line-height:1.5;margin:16px 0}
+.tile small{
+  position:relative;
+  text-transform:uppercase;
+  letter-spacing:.14em;
+  color:#8fc7a5;
+  font-size:10px;
+  font-weight:900;
+}
 
-footer{background:#07100b;color:#fff;padding:52px 0 24px}
-.footer-top{display:flex;justify-content:space-between;gap:30px;align-items:center}
-.footer-brand{display:flex;align-items:center;gap:14px}
-.footer-brand img{width:58px;height:58px;object-fit:contain;background:#fff;border-radius:50%}
-.footer-brand strong{display:block;font-size:18px}
-.footer-brand span{display:block;color:#8f9c92;font-size:13px;margin-top:3px}
-.footer-right{color:#8f9c92;font-size:13px;text-align:right}
-.fem{margin-top:36px;padding-top:18px;border-top:1px solid rgba(255,255,255,.07);font-size:8px;letter-spacing:.3em;color:#59645c;text-align:right}
+.tile h3{
+  position:relative;
+  font-size:36px;
+  line-height:1;
+  margin:8px 0 0;
+  letter-spacing:-.04em;
+}
 
-.modal{display:none;position:fixed;inset:0;background:rgba(0,0,0,.72);z-index:100;align-items:center;justify-content:center;padding:20px}
+.tile p{
+  position:relative;
+  max-width:480px;
+  color:#aeb9b0;
+  margin:12px 0 0;
+}
+
+/* CLASSMATE FORM */
+
+.form-section{
+  background:#fff;
+  padding:58px 0 72px;
+}
+
+.classmate-shell{
+  border:1px solid var(--line);
+  border-radius:24px;
+  overflow:hidden;
+  background:var(--paper);
+}
+
+.classmate-frame{
+  display:none;
+  width:100%;
+  height:900px;
+  border:0;
+  background:transparent;
+}
+
+.classmate-placeholder{
+  min-height:400px;
+  display:grid;
+  place-items:center;
+  text-align:center;
+  padding:42px;
+}
+
+.classmate-placeholder p{
+  max-width:560px;
+  color:var(--muted);
+}
+
+/* FOOTER */
+
+footer{
+  background:#07100b;
+  color:#fff;
+  padding:52px 0 24px;
+}
+
+.footer-top{
+  display:flex;
+  justify-content:space-between;
+  gap:30px;
+  align-items:center;
+}
+
+.footer-brand strong{
+  display:block;
+  font-size:18px;
+}
+
+.footer-brand span{
+  display:block;
+  color:#8f9c92;
+  font-size:13px;
+  margin-top:3px;
+}
+
+.footer-right{
+  color:#8f9c92;
+  font-size:13px;
+  text-align:right;
+}
+
+.fem{
+  margin-top:36px;
+  padding-top:18px;
+  border-top:1px solid rgba(255,255,255,.07);
+  font-size:8px;
+  letter-spacing:.3em;
+  color:#59645c;
+  text-align:right;
+}
+
+/* MODAL */
+
+.modal{
+  display:none;
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.72);
+  z-index:100;
+  align-items:center;
+  justify-content:center;
+  padding:20px;
+}
+
 .modal.on{display:flex}
-.modalbox{background:var(--paper);width:min(760px,100%);max-height:90vh;overflow:auto;border-radius:22px;padding:22px}
-.close{float:right;border:0;background:transparent;font-size:28px;cursor:pointer}
-.upload-frame{display:none;width:100%;height:720px;border:0}
-.notice{background:var(--green-pale);padding:18px;border-radius:16px;color:#274232}
-code{background:#e8ece8;padding:2px 5px;border-radius:4px}
 
-@media(max-width:900px){
+.modalbox{
+  background:var(--paper);
+  width:min(900px,100%);
+  max-height:92vh;
+  overflow:auto;
+  border-radius:22px;
+  padding:22px;
+}
+
+.close{
+  float:right;
+  border:0;
+  background:transparent;
+  font-size:28px;
+  cursor:pointer;
+}
+
+.upload-frame{
+  display:none;
+  width:100%;
+  height:760px;
+  border:0;
+}
+
+.notice{
+  background:var(--green-pale);
+  padding:18px;
+  border-radius:16px;
+  color:#274232;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:980px){
   .navlinks{display:none}
-  .hero{min-height:auto}
-  .hero-grid{grid-template-columns:1fr;padding:56px 0 70px}
-  .hero-mark{width:150px;margin:0;order:-1}
-  .intro-grid{grid-template-columns:repeat(2,1fr)}
-  .intro-grid a:nth-child(2){border-right:0}
-  .intro-grid a:nth-child(-n+2){border-bottom:1px solid var(--line)}
-  .sectionhead,.recap-grid{grid-template-columns:1fr}
-  .tile-grid{grid-template-columns:1fr}
-  .formgrid{grid-template-columns:1fr}
-  .field.full{grid-column:auto}
-  .upload-callout,.footer-top{align-items:flex-start;flex-direction:column}
+
+  .hero{
+    min-height:auto;
+    background-position:center;
+  }
+
+  .hero-grid{
+    grid-template-columns:1fr;
+    padding:50px 0 60px;
+  }
+
+  .hero-mascot img{
+    width:min(360px,80vw);
+  }
+
+  .hero-copy{
+    margin-top:-15px;
+  }
+
+  .welcome-grid{
+    grid-template-columns:1fr;
+    gap:20px;
+  }
+
+  .sectionhead,
+  .recap-grid{
+    grid-template-columns:1fr;
+  }
+
+  .tile-grid{
+    grid-template-columns:1fr;
+  }
+
+  .upload-callout,
+  .footer-top{
+    align-items:flex-start;
+    flex-direction:column;
+  }
+
   .footer-right{text-align:left}
+  .classmate-frame{height:1050px}
+}
+
+@media(max-width:600px){
+  .wrap{width:min(100% - 24px,1180px)}
+
+  .navin{height:74px}
+
+  .brand .cchs{font-size:24px}
+
+  .hero{
+    background-position:58% center;
+  }
+
+  .hero-grid{
+    padding-top:34px;
+  }
+
+  .hero-mascot img{
+    width:min(300px,85vw);
+  }
+
+  .hero-script{
+    font-size:70px;
+  }
+
+  .hero-year{
+    font-size:116px;
+    -webkit-text-stroke:3px #fff;
+  }
+
+  .hero-actions{
+    flex-direction:column;
+    width:100%;
+  }
+
+  .hero-btn{
+    width:100%;
+  }
+
+  .welcome-grid{
+    min-height:auto;
+    padding:32px 0;
+  }
+
+  .gallery-frame{height:700px}
+  .classmate-frame{height:1180px}
 }
 </style>
 </head>
@@ -152,75 +798,99 @@ code{background:#e8ece8;padding:2px 5px;border-radius:4px}
 
 <nav>
   <div class="wrap navin">
+
     <a class="brand" href="#top">
-      <img src="greenwave-logo.jpg" alt="Churchill County Greenwave logo">
-      <div class="brand-copy">
-        <small>Churchill County High School</small>
-        <strong>Class of 1996</strong>
-      </div>
+      <span class="cchs">CCHS</span>
+      <span class="class">Class of 1996</span>
     </a>
 
     <div class="navlinks">
-      <a href="#reunion">Reunion</a>
-      <a href="#photos">Photos</a>
+      <a href="#top">Home</a>
+      <a href="#photos">Photo Archive</a>
       <a href="#explore">Classmates</a>
-      <a href="#update">Add Your Info</a>
-      <a class="nav-upload" href="javascript:void(0)" onclick="openUpload()">Upload Photos</a>
+      <a href="#reunion">Reunion</a>
+
+      <a
+        class="nav-upload"
+        href="javascript:void(0)"
+        onclick="openUpload()">
+        Share Photos
+      </a>
     </div>
+
   </div>
 </nav>
 
 <header class="hero" id="top">
   <div class="wrap hero-grid">
-    <div>
-      <div class="hero-kicker">Fallon, Nevada</div>
 
-      <h1>
-        Class of 1996
-        <span>Churchill County High School</span>
-      </h1>
+    <div class="hero-mascot">
+      <img
+        src="greenwave-logo.png?v=3"
+        alt="Churchill County Greenwave mascot"
+      >
+    </div>
 
-      <p>
-        Thirty years went fast. This is our place to keep the photos, find each other again,
-        remember the people we lost, and hang onto some of the stories before we all start
-        telling them differently.
-      </p>
+    <div class="hero-copy">
 
-      <div class="actions">
-        <a class="btn" href="#photos">Explore the Archive</a>
-        <button class="btn alt" type="button" onclick="openUpload()">Upload Photos</button>
+      <h1 class="hero-script">Greenwave</h1>
+      <div class="hero-rule"></div>
+
+      <div class="hero-overline">
+        CCHS Class of
       </div>
+
+      <div class="hero-year">
+        1996
+      </div>
+
+      <div class="hero-tagline">
+        Still Making Waves
+      </div>
+
+      <div class="hero-actions">
+
+        <a
+          class="hero-btn primary"
+          href="#photos">
+          Photo Archive
+        </a>
+
+        <a
+          class="hero-btn light"
+          href="#update">
+          Classmates
+        </a>
+
+        <a
+          class="hero-btn"
+          href="#reunion">
+          Reunion
+        </a>
+
+      </div>
+
     </div>
 
-    <div class="hero-mark">
-      <img src="greenwave-logo.jpg" alt="Greenwave logo">
-    </div>
   </div>
 </header>
 
-<div class="intro-strip">
-  <div class="wrap intro-grid">
-    <a href="#reunion">
-      <small>August 2026</small>
-      Reunion Weekend
-    </a>
+<section class="welcome">
+  <div class="wrap welcome-grid">
 
-    <a href="#photos">
-      <small>Then + Now</small>
-      Photo Archive
-    </a>
+    <div class="welcome-mark">
+      <small>Welcome back,</small>
+      <strong>Class of ’96.</strong>
+    </div>
 
-    <a href="#explore">
-      <small>Where'd everybody go?</small>
-      Classmates
-    </a>
+    <div class="welcome-copy">
+      Different paths. Same roots. This is our place to reconnect,
+      relive the good times, share some photos, remember the people
+      we lost, and hang onto the stories that still make us us.
+    </div>
 
-    <a href="#update">
-      <small>Your turn</small>
-      Add Your Info
-    </a>
   </div>
-</div>
+</section>
 
 <section class="recap" id="reunion">
   <div class="wrap">
@@ -247,8 +917,9 @@ code{background:#e8ece8;padding:2px 5px;border-radius:4px}
         </div>
 
         <p>
-          Reunion photos, old high school pictures, whatever somebody found in a box
-          at their parents' house. If it belongs to this class, it belongs here.
+          Reunion photos, old high school pictures, whatever somebody found
+          in a box at their parents' house. If it belongs to this class,
+          it belongs here.
         </p>
       </div>
 
@@ -257,9 +928,10 @@ code{background:#e8ece8;padding:2px 5px;border-radius:4px}
           <h3>The weekend, eventually.</h3>
 
           <p>
-            I'll add the real recap once I've got the words for it. Until then,
-            consider this the holding spot for the photos, dumb stories,
-            surprisingly good hugs, and everything else that made the weekend what it was.
+            I'll add the real recap once I've got the words for it.
+            Until then, consider this the holding spot for the photos,
+            dumb stories, surprisingly good hugs, and everything else
+            that made the weekend what it was.
           </p>
         </div>
 
@@ -267,6 +939,7 @@ code{background:#e8ece8;padding:2px 5px;border-radius:4px}
       </div>
 
     </div>
+
   </div>
 </section>
 
@@ -281,16 +954,20 @@ code{background:#e8ece8;padding:2px 5px;border-radius:4px}
 
       <p>
         Reunion weekend is the priority right now, but don't stop there.
-        Senior year, football games, graduation, random weekends, bad haircuts,
-        worse clothes. Send it all.
+        Senior year, football games, graduation, random weekends,
+        bad haircuts, worse clothes. Send it all.
       </p>
     </div>
 
     <div class="archive-shell">
 
-      <div id="gallerySetup" class="archive-placeholder">
+      <div
+        id="gallerySetup"
+        class="archive-placeholder">
+
         <div>
           <div class="num">96</div>
+
           <h3>The gallery is almost live.</h3>
 
           <p>
@@ -298,10 +975,14 @@ code{background:#e8ece8;padding:2px 5px;border-radius:4px}
             approved photos will show up here automatically.
           </p>
 
-          <button class="btn" type="button" onclick="openUpload()">
+          <button
+            class="btn"
+            type="button"
+            onclick="openUpload()">
             Upload Photos
           </button>
         </div>
+
       </div>
 
       <iframe
@@ -314,6 +995,7 @@ code{background:#e8ece8;padding:2px 5px;border-radius:4px}
     </div>
 
     <div class="upload-callout">
+
       <div>
         <strong>Got pictures?</strong>
 
@@ -323,9 +1005,13 @@ code{background:#e8ece8;padding:2px 5px;border-radius:4px}
         </p>
       </div>
 
-      <button class="btn" type="button" onclick="openUpload()">
+      <button
+        class="btn"
+        type="button"
+        onclick="openUpload()">
         Contribute to the Archive
       </button>
+
     </div>
 
   </div>
@@ -351,6 +1037,7 @@ code{background:#e8ece8;padding:2px 5px;border-radius:4px}
       <a class="tile" href="#update">
         <small>Classmates</small>
         <h3>Where are you now?</h3>
+
         <p>
           Share as much or as little as you want. City, work, family,
           adventures, whatever makes sense thirty years later.
@@ -360,6 +1047,7 @@ code{background:#e8ece8;padding:2px 5px;border-radius:4px}
       <a class="tile" href="#photos">
         <small>Then + Now</small>
         <h3>Photo Archive</h3>
+
         <p>
           The reunion, high school, graduation, and anything else
           we probably thought we'd remember forever.
@@ -369,6 +1057,7 @@ code{background:#e8ece8;padding:2px 5px;border-radius:4px}
       <div class="tile">
         <small>Coming Soon</small>
         <h3>Stories</h3>
+
         <p>
           The stuff that won't fit in a caption.
           Teachers, road trips, games, bad decisions, good people.
@@ -378,6 +1067,7 @@ code{background:#e8ece8;padding:2px 5px;border-radius:4px}
       <div class="tile">
         <small>Coming Soon</small>
         <h3>In Memory</h3>
+
         <p>
           A simple place to remember classmates who should still be here with us.
         </p>
@@ -390,94 +1080,33 @@ code{background:#e8ece8;padding:2px 5px;border-radius:4px}
 <section class="form-section" id="update">
   <div class="wrap">
 
-    <div class="sectionhead">
-      <div>
-        <div class="eyebrow">Your turn</div>
-        <h2>Tell us where you landed.</h2>
-      </div>
+    <div class="classmate-shell">
 
-      <p>
-        This is optional. Put in what you're comfortable sharing.
-        Nothing should be public unless you say so.
-      </p>
-    </div>
+      <div
+        id="classmateSetup"
+        class="classmate-placeholder">
 
-    <div class="form-card">
+        <div>
+          <div class="eyebrow">Your turn</div>
+          <h2>Tell us where you landed.</h2>
 
-      <form id="profileForm">
-
-        <div class="formgrid">
-
-          <div class="field">
-            <label>First name</label>
-            <input required name="first" />
-          </div>
-
-          <div class="field">
-            <label>Last name in high school</label>
-            <input required name="last" />
-          </div>
-
-          <div class="field">
-            <label>Current last name</label>
-            <input name="current" />
-          </div>
-
-          <div class="field">
-            <label>Current city / state</label>
-            <input name="city" />
-          </div>
-
-          <div class="field full">
-            <label>What have you been up to?</label>
-            <textarea
-              name="bio"
-              placeholder="Work, family, travel, weird hobbies, whatever you want to share.">
-            </textarea>
-          </div>
-
-          <div class="field">
-            <label>Email</label>
-            <input type="email" name="email" />
-          </div>
-
-          <div class="field">
-            <label>Phone (optional)</label>
-            <input name="phone" />
-          </div>
-
-          <div class="field">
-            <label>Show my contact info?</label>
-            <select name="visible">
-              <option>No, keep it private</option>
-              <option>Show email only</option>
-              <option>Show phone only</option>
-              <option>Show both</option>
-            </select>
-          </div>
-
-          <div class="field">
-            <label>Keep me posted?</label>
-            <select name="updates">
-              <option>Yes</option>
-              <option>No thanks</option>
-            </select>
-          </div>
-
+          <p>
+            The classmate form is being connected.
+            Check back shortly.
+          </p>
         </div>
 
-        <p class="fine">
-          We'll keep private information private. The goal here is to make it easier
-          for classmates to reconnect, not make anybody regret filling out a form.
-        </p>
+      </div>
 
-        <button class="btn" type="submit">
-          Submit My Info
-        </button>
-
-      </form>
+      <iframe
+        id="classmateFrame"
+        class="classmate-frame"
+        title="Add your CCHS Class of 1996 information"
+        loading="lazy">
+      </iframe>
 
     </div>
+
   </div>
 </section>
 
@@ -486,15 +1115,13 @@ code{background:#e8ece8;padding:2px 5px;border-radius:4px}
   <div class="wrap footer-top">
 
     <div class="footer-brand">
-      <img src="greenwave-logo.jpg" alt="Greenwave logo">
+      <strong>
+        Churchill County High School · Class of 1996
+      </strong>
 
-      <div>
-        <strong>
-          Churchill County High School · Class of 1996
-        </strong>
-
-        <span>Fallon, Nevada</span>
-      </div>
+      <span>
+        Fallon, Nevada
+      </span>
     </div>
 
     <div class="footer-right">
@@ -531,8 +1158,7 @@ code{background:#e8ece8;padding:2px 5px;border-radius:4px}
       </h2>
 
       <div class="notice">
-        The uploader is built. Once the Google Apps Script web app is deployed,
-        paste its URL into <code>PHOTO_APP_URL</code> near the bottom of this file.
+        The uploader is being connected.
       </div>
 
     </div>
@@ -542,33 +1168,6 @@ code{background:#e8ece8;padding:2px 5px;border-radius:4px}
       class="upload-frame"
       title="Upload CCHS Class of 1996 photos">
     </iframe>
-
-  </div>
-</div>
-
-<div class="modal" id="thanksModal">
-
-  <div class="modalbox">
-
-    <button
-      class="close"
-      id="thanksClose"
-      aria-label="Close">
-      ×
-    </button>
-
-    <div class="eyebrow">
-      Got it
-    </div>
-
-    <h2 style="font-size:42px;margin-bottom:12px">
-      Thanks.
-    </h2>
-
-    <p style="color:var(--muted)">
-      Your info was submitted. Once Firestore is fully connected,
-      updates will go into a private admin queue before anything appears publicly.
-    </p>
 
   </div>
 
@@ -582,6 +1181,8 @@ const PHOTO_APP_URL =
 const photoAppReady =
   PHOTO_APP_URL.startsWith('https://script.google.com/');
 
+/* PHOTO GALLERY */
+
 const galleryFrame =
   document.getElementById('galleryFrame');
 
@@ -589,6 +1190,7 @@ const gallerySetup =
   document.getElementById('gallerySetup');
 
 if (photoAppReady) {
+
   galleryFrame.src =
     PHOTO_APP_URL + '?view=gallery';
 
@@ -598,6 +1200,28 @@ if (photoAppReady) {
   gallerySetup.style.display =
     'none';
 }
+
+/* CLASSMATE FORM */
+
+const classmateFrame =
+  document.getElementById('classmateFrame');
+
+const classmateSetup =
+  document.getElementById('classmateSetup');
+
+if (photoAppReady) {
+
+  classmateFrame.src =
+    PHOTO_APP_URL + '?view=classmate';
+
+  classmateFrame.style.display =
+    'block';
+
+  classmateSetup.style.display =
+    'none';
+}
+
+/* PHOTO UPLOAD */
 
 function openUpload() {
 
@@ -634,6 +1258,7 @@ function openUpload() {
 }
 
 function closeModal(id) {
+
   document
     .getElementById(id)
     .classList
@@ -643,13 +1268,11 @@ function closeModal(id) {
 document.getElementById('uploadClose').onclick =
   () => closeModal('uploadModal');
 
-document.getElementById('thanksClose').onclick =
-  () => closeModal('thanksModal');
-
 document.querySelectorAll('.modal').forEach(
   modal => modal.addEventListener(
     'click',
     event => {
+
       if (event.target === modal) {
         modal.classList.remove('on');
       }
@@ -657,21 +1280,17 @@ document.querySelectorAll('.modal').forEach(
   )
 );
 
-const form =
-  document.getElementById('profileForm');
-
-form.addEventListener(
-  'submit',
+document.addEventListener(
+  'keydown',
   event => {
 
-    event.preventDefault();
-
-    document
-      .getElementById('thanksModal')
-      .classList
-      .add('on');
-
-    form.reset();
+    if (event.key === 'Escape') {
+      document
+        .querySelectorAll('.modal.on')
+        .forEach(
+          modal => modal.classList.remove('on')
+        );
+    }
   }
 );
 

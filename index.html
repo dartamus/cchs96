@@ -481,7 +481,7 @@ h2{
   color:var(--muted);
 }
 
-/* CLASSMATES */
+/* EXPLORE */
 
 .explore{
   background:#0b1510;
@@ -496,24 +496,86 @@ h2{
   color:#adb9b0;
 }
 
-.directory-shell{
-  background:var(--paper);
-  border:1px solid rgba(255,255,255,.12);
-  border-radius:24px;
-  overflow:hidden;
-  min-height:400px;
+.tile-grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:16px;
 }
 
-.directory-frame{
+.tile{
+  min-height:260px;
+  padding:30px;
+  border-radius:24px;
+  text-decoration:none;
+  position:relative;
+  overflow:hidden;
+  display:flex;
+  flex-direction:column;
+  justify-content:flex-end;
+  background:#14251a;
+  border:1px solid rgba(255,255,255,.08);
+}
+
+.tile:before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(135deg,transparent,rgba(255,255,255,.025));
+}
+
+.tile:hover{
+  background:#183020;
+}
+
+.tile small{
+  position:relative;
+  text-transform:uppercase;
+  letter-spacing:.14em;
+  color:#8fc7a5;
+  font-size:10px;
+  font-weight:900;
+}
+
+.tile h3{
+  position:relative;
+  font-size:36px;
+  line-height:1;
+  margin:8px 0 0;
+  letter-spacing:-.04em;
+}
+
+.tile p{
+  position:relative;
+  max-width:480px;
+  color:#aeb9b0;
+  margin:12px 0 0;
+}
+
+
+/* GREENWAVE WALL */
+
+.wall-section{
+  background:var(--cream);
+}
+
+.wall-shell{
+  background:var(--paper);
+  border:1px solid var(--line);
+  border-radius:24px;
+  overflow:hidden;
+  min-height:440px;
+}
+
+.wall-frame{
   display:none;
   width:100%;
-  height:650px;
+  height:760px;
   border:0;
   background:transparent;
 }
 
-.directory-placeholder{
-  min-height:400px;
+.wall-placeholder{
+  min-height:440px;
   display:grid;
   place-items:center;
   text-align:center;
@@ -522,32 +584,11 @@ h2{
   background:var(--paper);
 }
 
-.classmate-cta{
-  margin-top:18px;
-  background:#14251a;
-  border:1px solid rgba(255,255,255,.08);
-  border-radius:20px;
-  padding:24px;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:24px;
-}
-
-.classmate-cta strong{
-  display:block;
-  font-size:19px;
-}
-
-.classmate-cta p{
-  margin:4px 0 0;
-  color:#aeb9b0;
-}
-
-.classmate-cta .btn{
-  background:#fff;
-  color:var(--green-dark);
-  flex:0 0 auto;
+.wall-note{
+  margin-top:16px;
+  color:var(--muted);
+  font-size:12px;
+  text-align:center;
 }
 
 /* CLASSMATE FORM */
@@ -636,10 +677,12 @@ footer{
   color:#718078;
   font-size:11px;
   text-decoration:none;
+  border-bottom:1px solid transparent;
 }
 
 .admin-link:hover{
   color:#fff;
+  border-bottom-color:#59645c;
 }
 
 .fem{
@@ -733,8 +776,11 @@ footer{
     grid-template-columns:1fr;
   }
 
+  .tile-grid{
+    grid-template-columns:1fr;
+  }
+
   .upload-callout,
-  .classmate-cta,
   .footer-top{
     align-items:flex-start;
     flex-direction:column;
@@ -742,10 +788,6 @@ footer{
 
   .footer-right{
     text-align:left;
-  }
-
-  .directory-frame{
-    height:850px;
   }
 
   .classmate-frame{
@@ -760,10 +802,6 @@ footer{
 
   .gallery-frame{
     height:700px;
-  }
-
-  .directory-frame{
-    height:1000px;
   }
 
   .classmate-frame{
@@ -798,6 +836,7 @@ footer{
       <a href="#top">Home</a>
       <a href="#photos">Photo Archive</a>
       <a href="#classmates">Classmates</a>
+      <a href="#wall">Wall</a>
 
       <a
         class="nav-upload"
@@ -826,7 +865,8 @@ footer{
 
       <p>
         Thirty years went fast. This is our place to keep the photos,
-        find each other again, and hang onto some of the stories before we all start telling them differently.
+        find each other again, remember the people we lost, and hang
+        onto some of the stories before we all start telling them differently.
       </p>
 
       <div class="actions">
@@ -880,6 +920,76 @@ footer{
 
   </div>
 </div>
+
+<section class="recap" id="reunion">
+  <div class="wrap">
+
+    <div class="sectionhead">
+
+      <div>
+        <div class="eyebrow">
+          Reunion Weekend
+        </div>
+
+        <h2>
+          We came home.
+        </h2>
+      </div>
+
+      <p>
+        Thirty years later, a bunch of us ended up back in Fallon for the weekend.
+        The full recap is coming. For now, we're collecting the pictures and trying
+        not to lose any of them in a group text.
+      </p>
+
+    </div>
+
+    <div class="recap-grid">
+
+      <div class="recap-main">
+
+        <div class="bigline">
+          Same people.<br>
+          More stories.
+        </div>
+
+        <p>
+          Reunion photos, old high school pictures, whatever somebody found
+          in a box at their parents' house. If it belongs to this class,
+          it belongs here.
+        </p>
+
+      </div>
+
+      <div class="recap-side">
+
+        <div>
+
+          <h3>
+            The weekend, eventually.
+          </h3>
+
+          <p>
+            I'll add the real recap once I've got the words for it.
+            Until then, consider this the holding spot for the photos,
+            dumb stories, surprisingly good hugs, and everything else
+            that made the weekend what it was.
+          </p>
+
+        </div>
+
+        <a
+          class="btn"
+          href="#photos">
+          See the Photos
+        </a>
+
+      </div>
+
+    </div>
+
+  </div>
+</section>
 
 <section id="photos">
   <div class="wrap">
@@ -980,61 +1090,94 @@ footer{
       <div>
 
         <div class="eyebrow">
-          Classmates
+          More than one weekend
         </div>
 
         <h2>
-          Where'd everybody go?
+          This is ours now.
         </h2>
 
       </div>
 
       <p>
-        Thirty years sent everybody in different directions.
-        Here's where people landed, or at least the ones who've checked in so far.
+        The reunion got this started. The idea is to keep it going,
+        without turning it into another social network nobody asked for.
       </p>
 
     </div>
 
-    <div class="directory-shell">
+    <div class="tile-grid">
 
-      <div
-        id="directorySetup"
-        class="directory-placeholder">
+      <a
+        class="tile"
+        href="#update">
 
-        Loading the classmate directory...
+        <small>
+          Classmates
+        </small>
 
-      </div>
-
-      <iframe
-        id="directoryFrame"
-        class="directory-frame"
-        title="CCHS Class of 1996 classmate directory"
-        loading="lazy">
-      </iframe>
-
-    </div>
-
-    <div class="classmate-cta">
-
-      <div>
-
-        <strong>
-          Missing from the list?
-        </strong>
+        <h3>
+          Where are you now?
+        </h3>
 
         <p>
-          Tell us where you landed. Nothing appears publicly
-          until an admin approves it.
+          Share as much or as little as you want. City, work, family,
+          adventures, whatever makes sense thirty years later.
+        </p>
+
+      </a>
+
+      <a
+        class="tile"
+        href="#photos">
+
+        <small>
+          Then + Now
+        </small>
+
+        <h3>
+          Photo Archive
+        </h3>
+
+        <p>
+          The reunion, high school, graduation, and anything else
+          we probably thought we'd remember forever.
+        </p>
+
+      </a>
+
+      <div class="tile">
+
+        <small>
+          Coming Soon
+        </small>
+
+        <h3>
+          Stories
+        </h3>
+
+        <p>
+          The stuff that won't fit in a caption.
+          Teachers, road trips, games, bad decisions, good people.
         </p>
 
       </div>
 
-      <a
-        class="btn"
-        href="#update">
-        Add Your Info
-      </a>
+      <div class="tile">
+
+        <small>
+          Coming Soon
+        </small>
+
+        <h3>
+          In Memory
+        </h3>
+
+        <p>
+          A simple place to remember classmates who should still be here with us.
+        </p>
+
+      </div>
 
     </div>
 
@@ -1081,6 +1224,54 @@ footer{
   </div>
 </section>
 
+
+<section class="wall-section" id="wall">
+  <div class="wrap">
+
+    <div class="sectionhead">
+
+      <div>
+        <div class="eyebrow">
+          Greenwave Wall
+        </div>
+
+        <h2>
+          Leave your mark.
+        </h2>
+      </div>
+
+      <p>
+        Drop a note. Share a memory. Say hey.
+        This is our little corner of the internet.
+      </p>
+
+    </div>
+
+    <div class="wall-shell">
+
+      <div
+        id="wallSetup"
+        class="wall-placeholder">
+        Loading the Greenwave Wall...
+      </div>
+
+      <iframe
+        id="wallFrame"
+        class="wall-frame"
+        title="CCHS Class of 1996 Greenwave Wall"
+        loading="lazy">
+      </iframe>
+
+    </div>
+
+    <div class="wall-note">
+      Posts appear immediately. Keep it human.
+    </div>
+
+  </div>
+</section>
+
+
 <footer>
 
   <div class="wrap footer-top">
@@ -1111,7 +1302,6 @@ footer{
     <div class="footer-right">
       Independent alumni site. Not an official Churchill County School District website.
       <br>
-
       <a
         class="admin-link"
         href="https://docs.google.com/spreadsheets/d/1lvkEDOGQb_d-I5IN_6Xevy6UkWqBiX8e94kcvWKIqQc/edit#gid=413139433"
@@ -1180,26 +1370,6 @@ if (photoAppReady) {
     'none';
 }
 
-/* PUBLIC CLASSMATE DIRECTORY */
-
-const directoryFrame =
-  document.getElementById('directoryFrame');
-
-const directorySetup =
-  document.getElementById('directorySetup');
-
-if (photoAppReady) {
-
-  directoryFrame.src =
-    PHOTO_APP_URL + '?view=directory';
-
-  directoryFrame.style.display =
-    'block';
-
-  directorySetup.style.display =
-    'none';
-}
-
 /* CLASSMATE FORM */
 
 const classmateFrame =
@@ -1217,6 +1387,27 @@ if (photoAppReady) {
     'block';
 
   classmateSetup.style.display =
+    'none';
+}
+
+
+/* GREENWAVE WALL */
+
+const wallFrame =
+  document.getElementById('wallFrame');
+
+const wallSetup =
+  document.getElementById('wallSetup');
+
+if (photoAppReady) {
+
+  wallFrame.src =
+    PHOTO_APP_URL + '?view=wall';
+
+  wallFrame.style.display =
+    'block';
+
+  wallSetup.style.display =
     'none';
 }
 

@@ -1260,7 +1260,25 @@ if (photoAppReady) {
   gallerySetup.style.display =
     'none';
 }
+/* PUBLIC CLASSMATE DIRECTORY */
 
+const directoryFrame =
+  document.getElementById('directoryFrame');
+
+const directorySetup =
+  document.getElementById('directorySetup');
+
+if (photoAppReady) {
+
+  directoryFrame.src =
+    PHOTO_APP_URL + '?view=directory';
+
+  directoryFrame.style.display =
+    'block';
+
+  directorySetup.style.display =
+    'none';
+}
 /* CLASSMATE FORM */
 
 const classmateFrame =

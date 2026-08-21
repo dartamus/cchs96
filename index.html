@@ -337,82 +337,6 @@ h2{
   line-height:1.6;
 }
 
-/* RECAP */
-
-.recap{
-  background:var(--cream);
-}
-
-.recap-grid{
-  display:grid;
-  grid-template-columns:1.15fr .85fr;
-  gap:22px;
-}
-
-.recap-main{
-  background:var(--green-dark);
-  color:#fff;
-  padding:44px;
-  border-radius:24px;
-  min-height:390px;
-  display:flex;
-  flex-direction:column;
-  justify-content:space-between;
-  position:relative;
-  overflow:hidden;
-}
-
-.recap-main:after{
-  content:"30";
-  position:absolute;
-  right:-10px;
-  bottom:-45px;
-  font-size:190px;
-  line-height:1;
-  font-weight:950;
-  color:rgba(255,255,255,.06);
-}
-
-.recap-main .bigline{
-  font-size:clamp(42px,6vw,76px);
-  line-height:.96;
-  letter-spacing:-.05em;
-  font-weight:900;
-  max-width:650px;
-  position:relative;
-  z-index:1;
-}
-
-.recap-main p{
-  max-width:590px;
-  color:#dcebe2;
-  font-size:17px;
-  position:relative;
-  z-index:1;
-}
-
-.recap-side{
-  background:#fff;
-  border:1px solid var(--line);
-  border-radius:24px;
-  padding:32px;
-  display:flex;
-  flex-direction:column;
-  justify-content:space-between;
-}
-
-.recap-side h3{
-  font-size:28px;
-  margin:0 0 12px;
-  letter-spacing:-.03em;
-}
-
-.recap-side p{
-  color:var(--muted);
-  font-size:16px;
-  line-height:1.7;
-}
-
 /* ARCHIVE */
 
 .archive-shell{
@@ -589,6 +513,76 @@ h2{
   color:var(--muted);
   font-size:12px;
   text-align:center;
+}
+
+
+/* CLASSMATES */
+
+.explore{
+  background:#0b1510;
+  color:#fff;
+}
+
+.explore .eyebrow{
+  color:#88caa5;
+}
+
+.explore .sectionhead p{
+  color:#adb9b0;
+}
+
+.directory-shell{
+  background:var(--paper);
+  border:1px solid rgba(255,255,255,.12);
+  border-radius:24px;
+  overflow:hidden;
+  min-height:400px;
+}
+
+.directory-frame{
+  display:none;
+  width:100%;
+  height:650px;
+  border:0;
+  background:transparent;
+}
+
+.directory-placeholder{
+  min-height:400px;
+  display:grid;
+  place-items:center;
+  text-align:center;
+  padding:42px;
+  color:var(--muted);
+  background:var(--paper);
+}
+
+.classmate-cta{
+  margin-top:18px;
+  background:#14251a;
+  border:1px solid rgba(255,255,255,.08);
+  border-radius:20px;
+  padding:24px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:24px;
+}
+
+.classmate-cta strong{
+  display:block;
+  font-size:19px;
+}
+
+.classmate-cta p{
+  margin:4px 0 0;
+  color:#aeb9b0;
+}
+
+.classmate-cta .btn{
+  background:#fff;
+  color:var(--green-dark);
+  flex:0 0 auto;
 }
 
 /* CLASSMATE FORM */
@@ -865,8 +859,7 @@ footer{
 
       <p>
         Thirty years went fast. This is our place to keep the photos,
-        find each other again, remember the people we lost, and hang
-        onto some of the stories before we all start telling them differently.
+        find each other again, and hang onto some of the stories before we all start telling them differently.
       </p>
 
       <div class="actions">
@@ -921,75 +914,6 @@ footer{
   </div>
 </div>
 
-<section class="recap" id="reunion">
-  <div class="wrap">
-
-    <div class="sectionhead">
-
-      <div>
-        <div class="eyebrow">
-          Reunion Weekend
-        </div>
-
-        <h2>
-          We came home.
-        </h2>
-      </div>
-
-      <p>
-        Thirty years later, a bunch of us ended up back in Fallon for the weekend.
-        The full recap is coming. For now, we're collecting the pictures and trying
-        not to lose any of them in a group text.
-      </p>
-
-    </div>
-
-    <div class="recap-grid">
-
-      <div class="recap-main">
-
-        <div class="bigline">
-          Same people.<br>
-          More stories.
-        </div>
-
-        <p>
-          Reunion photos, old high school pictures, whatever somebody found
-          in a box at their parents' house. If it belongs to this class,
-          it belongs here.
-        </p>
-
-      </div>
-
-      <div class="recap-side">
-
-        <div>
-
-          <h3>
-            The weekend, eventually.
-          </h3>
-
-          <p>
-            I'll add the real recap once I've got the words for it.
-            Until then, consider this the holding spot for the photos,
-            dumb stories, surprisingly good hugs, and everything else
-            that made the weekend what it was.
-          </p>
-
-        </div>
-
-        <a
-          class="btn"
-          href="#photos">
-          See the Photos
-        </a>
-
-      </div>
-
-    </div>
-
-  </div>
-</section>
 
 <section id="photos">
   <div class="wrap">
@@ -1090,94 +1014,61 @@ footer{
       <div>
 
         <div class="eyebrow">
-          More than one weekend
+          Classmates
         </div>
 
         <h2>
-          This is ours now.
+          Where'd everybody go?
         </h2>
 
       </div>
 
       <p>
-        The reunion got this started. The idea is to keep it going,
-        without turning it into another social network nobody asked for.
+        Thirty years sent everybody in different directions.
+        Here's where people landed, or at least the ones who've checked in so far.
       </p>
 
     </div>
 
-    <div class="tile-grid">
+    <div class="directory-shell">
+
+      <div
+        id="directorySetup"
+        class="directory-placeholder">
+
+        Loading the classmate directory...
+
+      </div>
+
+      <iframe
+        id="directoryFrame"
+        class="directory-frame"
+        title="CCHS Class of 1996 classmate directory"
+        loading="lazy">
+      </iframe>
+
+    </div>
+
+    <div class="classmate-cta">
+
+      <div>
+
+        <strong>
+          Missing from the list?
+        </strong>
+
+        <p>
+          Tell us where you landed. Nothing appears publicly
+          until an admin approves it.
+        </p>
+
+      </div>
 
       <a
-        class="tile"
+        class="btn"
         href="#update">
-
-        <small>
-          Classmates
-        </small>
-
-        <h3>
-          Where are you now?
-        </h3>
-
-        <p>
-          Share as much or as little as you want. City, work, family,
-          adventures, whatever makes sense thirty years later.
-        </p>
-
+        Add Your Info
       </a>
-
-      <a
-        class="tile"
-        href="#photos">
-
-        <small>
-          Then + Now
-        </small>
-
-        <h3>
-          Photo Archive
-        </h3>
-
-        <p>
-          The reunion, high school, graduation, and anything else
-          we probably thought we'd remember forever.
-        </p>
-
-      </a>
-
-      <div class="tile">
-
-        <small>
-          Coming Soon
-        </small>
-
-        <h3>
-          Stories
-        </h3>
-
-        <p>
-          The stuff that won't fit in a caption.
-          Teachers, road trips, games, bad decisions, good people.
-        </p>
-
-      </div>
-
-      <div class="tile">
-
-        <small>
-          Coming Soon
-        </small>
-
-        <h3>
-          In Memory
-        </h3>
-
-        <p>
-          A simple place to remember classmates who should still be here with us.
-        </p>
-
-      </div>
 
     </div>
 
